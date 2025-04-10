@@ -1,0 +1,153 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [pg_trgm, pgcrypto]
+}
+
+enum Role {
+  AGENT
+  CUSTOMER
+}
+
+enum ReviewStatus {
+  All_Review
+  Published
+  Deleted
+}
+
+enum PropertyStatus {
+  FOR_RENT
+  FOR_SALE
+  SOLD
+  RENTED
+}
+
+enum OrderStatus {
+  PENDING
+  COMPLETED
+  CANCELLED
+  SOLD
+}
+
+enum TransactionStatus {
+  PENDING
+  SUCCESS
+  FAILED
+}
+
+model User {
+  id          Int      @id @default(autoincrement())
+  name        String   @db.VarChar(120)
+  email       String   @unique @db.VarChar(255)
+  phone       String   @db.VarChar(20)
+  password    String   @db.VarChar(255)
+  avatar      String   @db.VarChar(255)
+  location    String   @db.VarChar(120)
+  role        Role     @default(CUSTOMER)
+  summary     String?  @db.VarChar(150)
+  position    String?  @db.VarChar(50)
+  socialMedia Json?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  reviews        Review[]
+  ownerships     PropertyOwnership[]
+  properties     Property[]          @relation("AgentProperties")
+  customerOrders Order[]             @relation("CustomerOrders")
+  agentOrders    Order[]             @relation("AgentOrders")
+
+  @@index([email])
+  @@index([phone])
+  @@index([role])
+}
+
+model Order {
+  id        Int         @id @default(autoincrement())
+  status    OrderStatus
+  amount    Float
+  type      String
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  customerId Int
+  customer   User @relation("CustomerOrders", fields: [customerId], references: [id])
+
+  agentId Int
+  agent   User @relation("AgentOrders", fields: [agentId], references: [id])
+
+  propertyId Int
+  property   Property @relation("PropertyOrders", fields: [propertyId], references: [id])
+
+  @@index([status])
+  @@index([customerId])
+  @@index([propertyId])
+}
+
+model Property {
+  id          Int            @id @default(autoincrement())
+  title       String         @db.VarChar(200)
+  description String         @db.Text
+  status      PropertyStatus
+  address     String         @db.VarChar(255)
+  city        String         @db.VarChar(100)
+  state       String         @db.VarChar(50)
+  zipCode     String         @db.VarChar(20)
+  price       Float
+  bedrooms    Int?
+  bathrooms   Int?
+  squareFeet  Int?
+  yearBuilt   Int?
+  features    String[]
+  imageUrls   String[]
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  agentId Int
+  agent   User @relation("AgentProperties", fields: [agentId], references: [id], onDelete: Cascade)
+
+  reviews    Review[]            @relation("PropertyReviews")
+  ownerships PropertyOwnership[] @relation("OwnerHistory")
+  orders     Order[]             @relation("PropertyOrders")
+
+  @@index([status])
+  @@index([price])
+  @@index([city])
+  @@index([zipCode])
+}
+
+model Review {
+  id        Int          @id @default(autoincrement())
+  comment   String       @db.Text
+  rating    Int          @default(5)
+  images    String[]
+  status    ReviewStatus
+  createdAt DateTime     @default(now())
+
+  propertyId Int
+  property   Property @relation("PropertyReviews", fields: [propertyId], references: [id], onDelete: Cascade)
+
+  userId Int
+  user   User @relation(fields: [userId], references: [id])
+
+  @@index([propertyId])
+  @@index([rating])
+}
+
+model PropertyOwnership {
+  id         Int       @id @default(autoincrement())
+  propertyId Int
+  userId     Int
+  startDate  DateTime  @default(now())
+  endDate    DateTime?
+
+  property Property @relation("OwnerHistory", fields: [propertyId], references: [id], onDelete: Cascade)
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([propertyId])
+  @@index([userId])
+}

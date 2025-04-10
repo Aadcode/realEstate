@@ -1,0 +1,2463 @@
+{
+  "Year:": {
+    "propertyCode": "Year:",
+    "address": "2025",
+    "rentAmount": "$95,135.00",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "$8,080.00",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Property Code": {
+    "propertyCode": "Property Code",
+    "address": "Property Address/Unit #",
+    "rentAmount": "Rent Amt.",
+    "tenantName": "Tenant Name",
+    "phone": "Phone",
+    "moveInDate": "Move-In Date",
+    "renewalDate": "Renewal date",
+    "propertyValue": "",
+    "downPayment": "20% Down",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "A": {
+    "propertyCode": "A",
+    "address": "123 Oak Street, #123",
+    "rentAmount": "$1,500",
+    "tenantName": "John Doe",
+    "phone": "(555) 555-5555",
+    "moveInDate": "1/1/19",
+    "renewalDate": "2/1/25",
+    "propertyValue": "$415,000",
+    "downPayment": "$83,000",
+    "securityDeposit": [
+      {
+        "type": "Deposit Received",
+        "date": "1/1/19",
+        "amount": 1500
+      },
+      {
+        "type": "Pet Deposit",
+        "date": "1/1/19",
+        "amount": 100
+      }
+    ],
+    "rentalIncomeByMonth": {
+      "Jan": {
+        "totalIncome": 1500,
+        "lateFee": 50
+      },
+      "Feb": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "Mar": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "Apr": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "May": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "Jun": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "Jul": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "Aug": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "Sept": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "Oct": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "Nov": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      },
+      "Dec": {
+        "totalIncome": 1500,
+        "lateFee": 0
+      }
+    },
+    "yearlyRentalIncome": {
+      "totalIncome": 18000,
+      "totalLateFee": 50
+    },
+    "otherIncome": [
+      {
+        "type": "Laundry",
+        "date": "2/4/19",
+        "amount": 5
+      },
+      {
+        "type": "Storage",
+        "date": "2/4/19",
+        "amount": 10
+      },
+      {
+        "type": "Parking",
+        "date": "2/4/19",
+        "amount": 100
+      }
+    ],
+    "otherExpenses": [
+      {
+        "type": "Property Taxes",
+        "date": null,
+        "amount": 766,
+        "description": null
+      },
+      {
+        "type": "Principal and Interest",
+        "date": null,
+        "amount": 2101,
+        "description": null
+      },
+      {
+        "type": "Home Insurance",
+        "date": null,
+        "amount": 248,
+        "description": null
+      },
+      {
+        "type": "Pest Control",
+        "date": null,
+        "amount": 100,
+        "description": null
+      }
+    ],
+    "totals": {
+      "securityDepositTotal": 1600,
+      "rentalIncomeTotal": {
+        "amount": 18000,
+        "lateFee": 50
+      },
+      "otherIncomeTotal": 115,
+      "otherExpenseTotal": 3215
+    }
+  },
+  "B": {
+    "propertyCode": "B",
+    "address": "567 Street Road",
+    "rentAmount": "$1,250",
+    "tenantName": "Bob Roberts",
+    "phone": "(555) 555-5555",
+    "moveInDate": "1/18/19",
+    "renewalDate": "2/18/28",
+    "propertyValue": "$350,000",
+    "downPayment": "$70,000.00",
+    "securityDeposit": [
+      {
+        "type": "Deposit Received",
+        "date": "1/18/19",
+        "amount": 1250
+      }
+    ],
+    "rentalIncomeByMonth": {
+      "Jan": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Feb": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Mar": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Apr": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "May": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Jun": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Jul": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Aug": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Sept": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Oct": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Nov": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      },
+      "Dec": {
+        "totalIncome": 1250,
+        "lateFee": 0
+      }
+    },
+    "yearlyRentalIncome": {
+      "totalIncome": 15000,
+      "totalLateFee": 0
+    },
+    "otherIncome": [
+      {
+        "type": "Storage",
+        "date": "2/1/19",
+        "amount": 50
+      },
+      {
+        "type": "Fees (application, etc.)",
+        "date": "2/1/19",
+        "amount": 100
+      }
+    ],
+    "otherExpenses": [
+      {
+        "type": "Property Taxes",
+        "date": null,
+        "amount": 646,
+        "description": null
+      },
+      {
+        "type": "Principal and Interest",
+        "date": null,
+        "amount": 1772,
+        "description": null
+      },
+      {
+        "type": "Home Insurance",
+        "date": null,
+        "amount": 248,
+        "description": null
+      },
+      {
+        "type": "Pest Control",
+        "date": null,
+        "amount": 100,
+        "description": null
+      }
+    ],
+    "totals": {
+      "securityDepositTotal": 1250,
+      "rentalIncomeTotal": {
+        "amount": 15000,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 150,
+      "otherExpenseTotal": 2766
+    }
+  },
+  "C": {
+    "propertyCode": "C",
+    "address": "890 Lake Blvd. E, #456",
+    "rentAmount": "$1,780",
+    "tenantName": "Jennifer Jane",
+    "phone": "(555) 555-5555",
+    "moveInDate": "1/29/19",
+    "renewalDate": "7/29/25",
+    "propertyValue": "$450,000",
+    "downPayment": "$90,000.00",
+    "securityDeposit": [
+      {
+        "type": "Deposit Received",
+        "date": "1/29/19",
+        "amount": 1780
+      }
+    ],
+    "rentalIncomeByMonth": {
+      "Jan": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Feb": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Mar": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Apr": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "May": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Jun": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Jul": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Aug": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Sept": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Oct": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Nov": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      },
+      "Dec": {
+        "totalIncome": 1780,
+        "lateFee": 0
+      }
+    },
+    "yearlyRentalIncome": {
+      "totalIncome": 21360,
+      "totalLateFee": 0
+    },
+    "otherIncome": [
+      {
+        "type": "Laundry",
+        "date": "2/2/19",
+        "amount": 10
+      },
+      {
+        "type": "Parking",
+        "date": "2/2/19",
+        "amount": 250
+      }
+    ],
+    "otherExpenses": [
+      {
+        "type": "Property Taxes",
+        "date": null,
+        "amount": 831,
+        "description": null
+      },
+      {
+        "type": "Principal and Interest",
+        "date": null,
+        "amount": 2278,
+        "description": null
+      },
+      {
+        "type": "Home Insurance",
+        "date": null,
+        "amount": 248,
+        "description": null
+      },
+      {
+        "type": "Pest Control",
+        "date": null,
+        "amount": 100,
+        "description": null
+      }
+    ],
+    "totals": {
+      "securityDepositTotal": 1780,
+      "rentalIncomeTotal": {
+        "amount": 21360,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 260,
+      "otherExpenseTotal": 3457
+    }
+  },
+  "D": {
+    "propertyCode": "D",
+    "address": "555 Road Ave. NW",
+    "rentAmount": "$1,400",
+    "tenantName": "Sarah Lee",
+    "phone": "(555) 555-5555",
+    "moveInDate": "2/11/19",
+    "renewalDate": "12/11/27",
+    "propertyValue": "$365,000",
+    "downPayment": "$73,000.00",
+    "securityDeposit": [
+      {
+        "type": "Deposit Received",
+        "date": "2/11/19",
+        "amount": 1400
+      },
+      {
+        "type": "Pet Deposit",
+        "date": "2/11/19",
+        "amount": 100
+      }
+    ],
+    "rentalIncomeByMonth": {
+      "Jan": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Feb": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Mar": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Apr": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "May": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Jun": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Jul": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Aug": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Sept": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Oct": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Nov": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      },
+      "Dec": {
+        "totalIncome": 1400,
+        "lateFee": 0
+      }
+    },
+    "yearlyRentalIncome": {
+      "totalIncome": 16800,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [
+      {
+        "type": "Property Taxes",
+        "date": null,
+        "amount": 674,
+        "description": null
+      },
+      {
+        "type": "Principal and Interest",
+        "date": null,
+        "amount": 1848,
+        "description": null
+      },
+      {
+        "type": "Home Insurance",
+        "date": null,
+        "amount": 248,
+        "description": null
+      },
+      {
+        "type": "Pest Control",
+        "date": null,
+        "amount": 100,
+        "description": null
+      }
+    ],
+    "totals": {
+      "securityDepositTotal": 1500,
+      "rentalIncomeTotal": {
+        "amount": 16800,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 2870
+    }
+  },
+  "E": {
+    "propertyCode": "E",
+    "address": "000 Zero St. S, #000",
+    "rentAmount": "$1,950",
+    "tenantName": "Mark Marcus",
+    "phone": "(555) 555-5555",
+    "moveInDate": "2/19/19",
+    "renewalDate": "5/19/26",
+    "propertyValue": "$475,000",
+    "downPayment": "$95,000.00",
+    "securityDeposit": [
+      {
+        "type": "Deposit Received",
+        "date": "2/19/19",
+        "amount": 1950
+      }
+    ],
+    "rentalIncomeByMonth": {
+      "Jan": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Feb": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Mar": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Apr": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "May": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Jun": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Jul": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Aug": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Sept": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Oct": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Nov": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      },
+      "Dec": {
+        "totalIncome": 1950,
+        "lateFee": 0
+      }
+    },
+    "yearlyRentalIncome": {
+      "totalIncome": 23400,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [
+      {
+        "type": "Property Taxes",
+        "date": null,
+        "amount": 877,
+        "description": null
+      },
+      {
+        "type": "Principal and Interest",
+        "date": null,
+        "amount": 2404,
+        "description": null
+      },
+      {
+        "type": "Home Insurance",
+        "date": null,
+        "amount": 248,
+        "description": null
+      },
+      {
+        "type": "Pest Control",
+        "date": null,
+        "amount": 100,
+        "description": null
+      }
+    ],
+    "totals": {
+      "securityDepositTotal": 1950,
+      "rentalIncomeTotal": {
+        "amount": 23400,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 3629
+    }
+  },
+  "Security Deposits": {
+    "propertyCode": "Security Deposits",
+    "address": "A",
+    "rentAmount": "",
+    "tenantName": "C",
+    "phone": "D",
+    "moveInDate": "E",
+    "renewalDate": "Total",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Deposit Received": {
+    "propertyCode": "Deposit Received",
+    "address": "1/1/19",
+    "rentAmount": "$1,250.00",
+    "tenantName": "1/29/19",
+    "phone": "2/11/19",
+    "moveInDate": "2/19/19",
+    "renewalDate": "$7,880.00",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Pet Deposit": {
+    "propertyCode": "Pet Deposit",
+    "address": "1/1/19",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "2/11/19",
+    "moveInDate": "",
+    "renewalDate": "$200.00",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Other:": {
+    "propertyCode": "Other:",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Total:": {
+    "propertyCode": "Total:",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$2,766.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$2,870.00",
+    "propertyValue": "$3,629.00",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Rental Income": {
+    "propertyCode": "Rental Income",
+    "address": "A",
+    "rentAmount": "B",
+    "tenantName": "",
+    "phone": "C",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Jan.": {
+    "propertyCode": "Jan.",
+    "address": "2/4/19",
+    "rentAmount": "2/1/19",
+    "tenantName": "$1,250.00",
+    "phone": "2/2/19",
+    "moveInDate": "$0.00",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Feb.": {
+    "propertyCode": "Feb.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Mar.": {
+    "propertyCode": "Mar.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Apr.": {
+    "propertyCode": "Apr.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "May": {
+    "propertyCode": "May",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Jun.": {
+    "propertyCode": "Jun.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Jul.": {
+    "propertyCode": "Jul.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Aug.": {
+    "propertyCode": "Aug.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Sept.": {
+    "propertyCode": "Sept.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Oct.": {
+    "propertyCode": "Oct.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Nov.": {
+    "propertyCode": "Nov.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Dec.": {
+    "propertyCode": "Dec.",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,250.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,400",
+    "propertyValue": "$1,950",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Other Income": {
+    "propertyCode": "Other Income",
+    "address": "A",
+    "rentAmount": "B",
+    "tenantName": "",
+    "phone": "C",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Laundry": {
+    "propertyCode": "Laundry",
+    "address": "2/4/19",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "2/2/19",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Storage": {
+    "propertyCode": "Storage",
+    "address": "2/4/19",
+    "rentAmount": "2/1/19",
+    "tenantName": "$50.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Fees (application, etc.)": {
+    "propertyCode": "Fees (application, etc.)",
+    "address": "",
+    "rentAmount": "2/1/19",
+    "tenantName": "$100.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Parking": {
+    "propertyCode": "Parking",
+    "address": "2/4/19",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "2/2/19",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Monthly Expenses": {
+    "propertyCode": "Monthly Expenses",
+    "address": "Jan.",
+    "rentAmount": "Apr.",
+    "tenantName": "May",
+    "phone": "Jul.",
+    "moveInDate": "Sept.",
+    "renewalDate": "Nov.",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Cleaning/Maintenace": {
+    "propertyCode": "Cleaning/Maintenace",
+    "address": "$20.00",
+    "rentAmount": "$20.00",
+    "tenantName": "$20.00",
+    "phone": "$20.00",
+    "moveInDate": "$20.00",
+    "renewalDate": "$20.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Yard/Snow removal": {
+    "propertyCode": "Yard/Snow removal",
+    "address": "$20.00",
+    "rentAmount": "$20.00",
+    "tenantName": "$20.00",
+    "phone": "$20.00",
+    "moveInDate": "$20.00",
+    "renewalDate": "$20.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Garbage": {
+    "propertyCode": "Garbage",
+    "address": "$10.00",
+    "rentAmount": "$10.00",
+    "tenantName": "$10.00",
+    "phone": "$10.00",
+    "moveInDate": "$10.00",
+    "renewalDate": "$10.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Gas": {
+    "propertyCode": "Gas",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Electricity": {
+    "propertyCode": "Electricity",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Water/Sewer": {
+    "propertyCode": "Water/Sewer",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "HOA Dues": {
+    "propertyCode": "HOA Dues",
+    "address": "$200.00",
+    "rentAmount": "$200.00",
+    "tenantName": "$200.00",
+    "phone": "$200.00",
+    "moveInDate": "$200.00",
+    "renewalDate": "$200.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Operating Expenses": {
+    "propertyCode": "Operating Expenses",
+    "address": "Jan.",
+    "rentAmount": "Apr.",
+    "tenantName": "May",
+    "phone": "Jul.",
+    "moveInDate": "Sept.",
+    "renewalDate": "Nov.",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Advertising": {
+    "propertyCode": "Advertising",
+    "address": "$100.00",
+    "rentAmount": "$100.00",
+    "tenantName": "$100.00",
+    "phone": "$100.00",
+    "moveInDate": "$100.00",
+    "renewalDate": "$100.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Technology Licenses": {
+    "propertyCode": "Technology Licenses",
+    "address": "$50.00",
+    "rentAmount": "$50.00",
+    "tenantName": "$50.00",
+    "phone": "$50.00",
+    "moveInDate": "$50.00",
+    "renewalDate": "$50.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Management Fees": {
+    "propertyCode": "Management Fees",
+    "address": "$100.00",
+    "rentAmount": "$100.00",
+    "tenantName": "$100.00",
+    "phone": "$100.00",
+    "moveInDate": "$100.00",
+    "renewalDate": "$100.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Auto Travel": {
+    "propertyCode": "Auto Travel",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Telephone": {
+    "propertyCode": "Telephone",
+    "address": "$50.00",
+    "rentAmount": "$50.00",
+    "tenantName": "$50.00",
+    "phone": "$50.00",
+    "moveInDate": "$50.00",
+    "renewalDate": "$50.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Professional Services": {
+    "propertyCode": "Professional Services",
+    "address": "$250.00",
+    "rentAmount": "$250.00",
+    "tenantName": "$250.00",
+    "phone": "$250.00",
+    "moveInDate": "$250.00",
+    "renewalDate": "$250.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Office Supplies": {
+    "propertyCode": "Office Supplies",
+    "address": "$25.00",
+    "rentAmount": "$25.00",
+    "tenantName": "$25.00",
+    "phone": "$25.00",
+    "moveInDate": "$25.00",
+    "renewalDate": "$25.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Wages and Salaries": {
+    "propertyCode": "Wages and Salaries",
+    "address": "$2,500.00",
+    "rentAmount": "$2,500.00",
+    "tenantName": "$2,500.00",
+    "phone": "$2,500.00",
+    "moveInDate": "$2,500.00",
+    "renewalDate": "$2,500.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Insurance": {
+    "propertyCode": "Insurance",
+    "address": "$400.00",
+    "rentAmount": "$400.00",
+    "tenantName": "$400.00",
+    "phone": "$400.00",
+    "moveInDate": "$400.00",
+    "renewalDate": "$400.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Taxes": {
+    "propertyCode": "Taxes",
+    "address": "$100.00",
+    "rentAmount": "$100.00",
+    "tenantName": "$100.00",
+    "phone": "$100.00",
+    "moveInDate": "$100.00",
+    "renewalDate": "$100.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Licenses": {
+    "propertyCode": "Licenses",
+    "address": "$300.00",
+    "rentAmount": "$300.00",
+    "tenantName": "$300.00",
+    "phone": "$300.00",
+    "moveInDate": "$300.00",
+    "renewalDate": "$300.00",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Other Expenses": {
+    "propertyCode": "Other Expenses",
+    "address": "A",
+    "rentAmount": "B",
+    "tenantName": "",
+    "phone": "C",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Property Taxes": {
+    "propertyCode": "Property Taxes",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$646.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$674.00",
+    "propertyValue": "$877.00",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Other taxes: (Specify)": {
+    "propertyCode": "Other taxes: (Specify)",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Principal and Interest": {
+    "propertyCode": "Principal and Interest",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$1,772.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$1,848.00",
+    "propertyValue": "$2,404.00",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Home Insurance": {
+    "propertyCode": "Home Insurance",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$248.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$248.00",
+    "propertyValue": "$248.00",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Mortgage Insurance": {
+    "propertyCode": "Mortgage Insurance",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$0.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$0.00",
+    "propertyValue": "$0.00",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Equipment Purchased": {
+    "propertyCode": "Equipment Purchased",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Repairs:": {
+    "propertyCode": "Repairs:",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Painting": {
+    "propertyCode": "Painting",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Plumbing": {
+    "propertyCode": "Plumbing",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Electrical": {
+    "propertyCode": "Electrical",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Appliances": {
+    "propertyCode": "Appliances",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Outside Contractors": {
+    "propertyCode": "Outside Contractors",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "",
+    "propertyValue": "",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "Pest Control": {
+    "propertyCode": "Pest Control",
+    "address": "",
+    "rentAmount": "",
+    "tenantName": "$100.00",
+    "phone": "",
+    "moveInDate": "",
+    "renewalDate": "$100.00",
+    "propertyValue": "$100.00",
+    "downPayment": "",
+    "securityDeposit": [],
+    "rentalIncomeByMonth": {},
+    "yearlyRentalIncome": {
+      "totalIncome": 0,
+      "totalLateFee": 0
+    },
+    "otherIncome": [],
+    "otherExpenses": [],
+    "totals": {
+      "securityDepositTotal": 0,
+      "rentalIncomeTotal": {
+        "amount": 0,
+        "lateFee": 0
+      },
+      "otherIncomeTotal": 0,
+      "otherExpenseTotal": 0
+    }
+  },
+  "monthlyExpenses": {
+    "Jan": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Feb": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Mar": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Apr": {
+      "Cleaning/Maintenace": 240,
+      "Yard/Snow removal": 240,
+      "Garbage": 120,
+      "HOA Dues": 2400
+    },
+    "May": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Jun": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Jul": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Aug": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Sept": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Oct": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Nov": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    },
+    "Dec": {
+      "Cleaning/Maintenace": 20,
+      "Yard/Snow removal": 20,
+      "Garbage": 10,
+      "HOA Dues": 200
+    }
+  },
+  "operatingExpenses": {
+    "Jan": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Feb": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Mar": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Apr": {
+      "Advertising": 1200,
+      "Technology Licenses": 600,
+      "Management Fees": 1200,
+      "Telephone": 600,
+      "Professional Services": 3000,
+      "Office Supplies": 300,
+      "Wages and Salaries": 30000,
+      "Insurance": 4800,
+      "Taxes": 1200,
+      "Licenses": 3600
+    },
+    "May": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Jun": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Jul": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Aug": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Sept": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Oct": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Nov": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    },
+    "Dec": {
+      "Advertising": 100,
+      "Technology Licenses": 50,
+      "Management Fees": 100,
+      "Telephone": 50,
+      "Professional Services": 250,
+      "Office Supplies": 25,
+      "Wages and Salaries": 2500,
+      "Insurance": 400,
+      "Taxes": 100,
+      "Licenses": 300
+    }
+  },
+  "incomeProfitability": {
+    "Income & Profitability Metrics": "Total",
+    "Net Operating Income": 29698,
+    "Capitalization Rate": 144.52,
+    "Gross Rent Multiplier": 21.72,
+    "Cash on Cash Return": 334.8
+  }
+}

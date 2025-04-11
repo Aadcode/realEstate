@@ -45,7 +45,15 @@ const Sidebar = () => {
         { path: "/propertyDetails", label: "Property Details" },
         { path: "/addProperty", label: "Add Property" }
       ]
-    }
+    },
+    {
+      section: "App",
+      icon: "https://cdn.builder.io/api/v1/image/assets/3911420c7fc948b98bd6faf80795a0cb/53f320a0e0e6dc706b2becd515691efaa0225c9c?placeholderIfAbsent=true",
+      title: "App",
+      items: [
+        { path: "/profile", label: "Profile" },
+      ]
+    },
   ];
 
   return (

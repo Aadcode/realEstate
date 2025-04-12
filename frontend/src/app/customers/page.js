@@ -12,11 +12,18 @@ const CustomersPage = () => {
   useEffect(() => {
     const fetchCustomers = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/customers");
+        const response = await fetch("http://localhost:8000/api/v1/users");
         const data = await response.json();
 
         if (data.success) {
-          setCustomers(data.data); // Extract customer data from API response
+          // Filter users to only show customers and include avatar
+          const customerUsers = data.data
+            .filter(user => user.role === 'CUSTOMER')
+            .map(customer => ({
+              ...customer,
+              avatar: customer.avatar || "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60"
+            }));
+          setCustomers(customerUsers);
         } else {
           throw new Error("Failed to fetch customers");
         }
@@ -52,9 +59,9 @@ const CustomersPage = () => {
                   name={customer.name}
                   email={customer.email}
                   phone={customer.phone || "N/A"}
-                  location="Unknown" // No location in API response, setting a default
-                  status="Active" // Assuming all customers are active
-                  image="https://cdn.builder.io/api/v1/image/assets/TEMP/cf3b9227ce103ede32e1755f81ee85a77cff7bcc" // Default image
+                  location={customer.location || "Unknown"}
+                  status="Active"
+                  avatar={customer.avatar}
                 />
               ))
             ) : (

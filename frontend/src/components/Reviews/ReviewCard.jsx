@@ -1,31 +1,11 @@
 import React from "react";
 import { Star } from "lucide-react";
-import axios from "axios";
 import toast from "react-hot-toast";
 
-const ReviewCard = ({ id, name, joinDate, review, rating, avatarUrl, status, reviewId, onStatusChange }) => {
-  console.log("ReviewCard received status:", status); // Debug log
-
+const ReviewCard = ({ id, name, joinDate, review, rating, avatar, status, reviewId, onStatusChange, showActions }) => {
   const handleAction = async (action) => {
     try {
-      console.log("Current review status:", status); // Debug log
-      console.log("Sending request with:", { reviewId, action, currentStatus: status }); // Debug log
-      
-      const response = await axios.put(
-        `http://localhost:8000/api/v1/reviews/${reviewId}`,
-        { action },
-        {
-          headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`
-          }
-        }
-      );
-
-      if (response.data.success) {
-        toast.success(`Review ${action}ed successfully`);
-        // Call onStatusChange with the new status
-        onStatusChange(reviewId, action === 'accept' ? 'Published' : 'Deleted');
-      }
+      await onStatusChange(reviewId, action);
     } catch (error) {
       console.error("Error updating review status:", error);
       toast.error(error.response?.data?.message || "Failed to update review status");
@@ -35,9 +15,12 @@ const ReviewCard = ({ id, name, joinDate, review, rating, avatarUrl, status, rev
   return (
     <div className="flex gap-4 p-6 border-b border-solid border-b-zinc-100 max-md:flex-col">
       <img
-        src={avatarUrl}
+        src={avatar}
         alt={name}
         className="rounded-xl h-[90px] w-[90px] max-md:h-[60px] max-md:w-[60px]"
+        onError={(e) => {
+          e.target.src = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60";
+        }}
       />
       <div className="flex-1 max-sm:p-0">
         <div className="mb-4">
@@ -66,7 +49,8 @@ const ReviewCard = ({ id, name, joinDate, review, rating, avatarUrl, status, rev
               ))}
             </div>
           </div>
-          {status === "All_Review" ? (
+          
+          {showActions && (
             <div className="flex gap-3 max-md:justify-between max-md:w-full max-sm:flex-col max-sm:gap-2.5">
               <button 
                 onClick={() => handleAction('accept')}
@@ -80,10 +64,6 @@ const ReviewCard = ({ id, name, joinDate, review, rating, avatarUrl, status, rev
               >
                 Reject
               </button>
-            </div>
-          ) : (
-            <div className="text-sm text-gray-500">
-              Cannot modify review in {status} status
             </div>
           )}
         </div>

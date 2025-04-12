@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
+import { toast } from "react-hot-toast";
 
 const fallbackReviews = [
   {
@@ -35,7 +36,7 @@ const fallbackReviews = [
   },
 ];
 
-const DEFAULT_AVATAR ="https://cdn.builder.io/api/v1/image/assets/TEMP/35eef414fdc4684988b1023c971fbe2b694ab52a";
+const DEFAULT_AVATAR = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60";
 
 const ReviewsList = () => {
   const [reviews, setReviews] = useState([]);
@@ -47,25 +48,24 @@ const ReviewsList = () => {
       const response = await fetch("http://localhost:8000/api/v1/reviews");
       const data = await response.json();
      
-      if (data.statusCode === 200 && data.data.length > 0) {
+      if (data.data && data.data.length > 0) {
         const apiReviews = data.data.map((review) => ({
           reviewId: review.id,
-          id: `#${review.customerId}`,
-          name: review.customer.name,
+          id: `#${review.userId}`,
+          name: review.user?.name || "Anonymous",
           joinDate: new Date(review.createdAt).toLocaleString(),
           review: review.comment,
           rating: review.rating,
-          avatarUrl: review.customer.profileImage || DEFAULT_AVATAR,
-          status: review.status
+          avatar: review.user?.avatar || DEFAULT_AVATAR,
+          status: review.status || "Pending"
         }));
-        console.log("API reviews:", apiReviews);
         setReviews(apiReviews);
       } else {
-        setReviews(fallbackReviews);
+        setReviews([]);
       }
     } catch (error) {
       console.error("Error fetching reviews:", error);
-      setReviews(fallbackReviews);
+      setReviews([]);
     } finally {
       setLoading(false);
     }
@@ -79,27 +79,50 @@ const ReviewsList = () => {
     setActiveTab(tab);
   };
 
-  const handleStatusChange = (reviewId, newStatus) => {
-    setReviews(prevReviews => 
-      prevReviews.map(review => 
-        review.reviewId === reviewId 
-          ? { ...review, status: newStatus }
-          : review
-      )
-    );
+  const handleStatusChange = async (reviewId, action) => {
+    try {
+      const response = await fetch(`http://localhost:8000/api/v1/reviews/${reviewId}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('token')}`
+        },
+        body: JSON.stringify({ 
+          action: action
+        })
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || 'Failed to update review status');
+      }
+
+      // Update the local state
+      setReviews(prevReviews => 
+        prevReviews.map(review => 
+          review.reviewId === reviewId 
+            ? { 
+                ...review, 
+                status: action === 'accept' ? 'Published' : 'Deleted' 
+              }
+            : review
+        )
+      );
+
+      toast.success(`Review ${action === 'accept' ? 'published' : 'deleted'} successfully`);
+    } catch (error) {
+      console.error("Error updating review status:", error);
+      toast.error(error.message || 'An error occurred while updating the review');
+      throw error; // Re-throw to be caught by ReviewCard
+    }
   };
 
   const filteredReviews = reviews.filter(review => {
-    switch (activeTab) {
-      case "All_Review":
-        return review.status === "All_Review";
-      case "Published":
-        return review.status === "Published";
-      case "Deleted":
-        return review.status === "Deleted";
-      default:
-        return true;
+    if (activeTab === "All_Review") {
+      return review.status === "All_Review" || review.status === "Pending";
     }
+    return review.status === activeTab;
   });
 
   return (
@@ -122,13 +145,14 @@ const ReviewsList = () => {
       {/* Review Content */}
       <div className="p-6">
         {loading ? (
-          <p>Loading reviews...</p>
+          <p className="text-center text-gray-500">Loading reviews...</p>
         ) : filteredReviews.length > 0 ? (
-          filteredReviews.map((review, index) => (
+          filteredReviews.map((review) => (
             <ReviewCard 
               key={review.reviewId} 
               {...review} 
               onStatusChange={handleStatusChange}
+              showActions={review.status === "All_Review" || review.status === "Pending"}
             />
           ))
         ) : (

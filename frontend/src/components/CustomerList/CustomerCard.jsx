@@ -8,7 +8,7 @@ const CustomerCard = ({
   phone,
   location,
   status,
-  image,
+  avatar
 }) => {
   return (
     <div className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow">
@@ -16,9 +16,12 @@ const CustomerCard = ({
         <div className="flex items-center gap-4">
           <div className="flex-shrink-0">
             <img
-              src={image}
+              src={avatar}
               alt={name}
               className="w-16 h-16 rounded-xl object-cover"
+              onError={(e) => {
+                e.target.src = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60";
+              }}
             />
           </div>
           <div className="flex-1 min-w-0">

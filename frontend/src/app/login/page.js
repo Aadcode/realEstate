@@ -6,26 +6,20 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import LoginImage from "../../../public/Login.png";
 
-export default function Signup() {
+export default function Login() {
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState({});
   const [formData, setFormData] = useState({
-    username: '',
     email: '',
     password: '',
-    phone: '',
-    location: ''
   });
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.username.trim()) newErrors.username = 'Username is required';
     if (!formData.email.match(/^\S+@\S+\.\S+$/)) newErrors.email = 'Invalid email format';
     if (formData.password.length < 8) newErrors.password = 'Password must be at least 8 characters';
-    if (!formData.phone.match(/^\d{10}$/)) newErrors.phone = 'Invalid phone number (10 digits required)';
-    if (!formData.location.trim()) newErrors.location = 'Location is required';
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -36,37 +30,34 @@ export default function Signup() {
   
     setIsLoading(true);
     try {
-      const response = await fetch('http://localhost:8000/api/v1/register', {
+      const response = await fetch('http://localhost:8000/api/v1/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ 
-          name: formData.username, 
-          email: formData.email, 
+        body: JSON.stringify({
+          email: formData.email,
           password: formData.password,
-          phone: formData.phone,
-          location: formData.location,
-          role: 'CUSTOMER' 
         }),
       });
   
       const data = await response.json();
   
       if (!response.ok) {
-        throw new Error(data.message || 'Signup failed');
+        throw new Error(data.message || 'Login failed');
       }
   
-      // Store user data in localStorage
-      localStorage.setItem("user", JSON.stringify(data.data));
+      // Store user data and token in localStorage
+      localStorage.setItem("user", JSON.stringify(data.data.user));
+      localStorage.setItem("token", data.data.token);
   
       // Redirect to dashboard
-      router.push("/login");
+      router.push("/dashboard");
   
     } catch (error) {
-      console.error('Signup error:', error);
+      console.error('Login error:', error);
       setErrors({
-        submit: error.message || 'Failed to create account. Please try again.'
+        submit: error.message || 'Failed to login. Please try again.'
       });
     } finally {
       setIsLoading(false);
@@ -100,7 +91,7 @@ export default function Signup() {
         </div>
 
         <h2 className="text-center text-lg sm:text-xl font-semibold text-gray-800">
-          Sign up your account
+          Welcome back
         </h2>
 
         {errors.submit && (
@@ -110,25 +101,6 @@ export default function Signup() {
         )}
 
         <form onSubmit={handleSubmit} className="mt-6 space-y-4">
-          <div>
-            <label className="block text-sm sm:text-base text-gray-600 font-medium">
-              Username
-            </label>
-            <input
-              type="text"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              placeholder="Enter username"
-              className={`mt-1 w-full p-2 sm:p-3 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-black ${
-                errors.username ? 'border-red-500' : 'border-gray-300'
-              }`}
-            />
-            {errors.username && (
-              <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.username}</p>
-            )}
-          </div>
-
           <div>
             <label className="block text-sm sm:text-base text-gray-600 font-medium">
               Email
@@ -181,46 +153,6 @@ export default function Signup() {
             )}
           </div>
 
-          {/* Phone Field */}
-          <div>
-            <label className="block text-sm sm:text-base text-gray-600 font-medium">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Enter phone number"
-              className={`mt-1 w-full p-2 sm:p-3 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-black ${
-                errors.phone ? 'border-red-500' : 'border-gray-300'
-              }`}
-            />
-            {errors.phone && (
-              <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.phone}</p>
-            )}
-          </div>
-
-          {/* Location Field */}
-          <div>
-            <label className="block text-sm sm:text-base text-gray-600 font-medium">
-              Location
-            </label>
-            <input
-              type="text"
-              name="location"
-              value={formData.location}
-              onChange={handleChange}
-              placeholder="Enter your location"
-              className={`mt-1 w-full p-2 sm:p-3 border rounded-lg outline-none focus:ring-2 focus:ring-purple-500 text-sm sm:text-black ${
-                errors.location ? 'border-red-500' : 'border-gray-300'
-              }`}
-            />
-            {errors.location && (
-              <p className="mt-1 text-xs sm:text-sm text-red-600">{errors.location}</p>
-            )}
-          </div>
-
           <button 
             type="submit"
             disabled={isLoading}
@@ -229,19 +161,19 @@ export default function Signup() {
             {isLoading ? (
               <>
                 <Loader2 className="animate-spin w-4 h-4 sm:w-5 sm:h-5" />
-                <span>Signing up...</span>
+                <span>Signing in...</span>
               </>
-            ) : 'Sign up'}
+            ) : 'Sign in'}
           </button>
         </form>
 
         <p className="text-center text-xs sm:text-sm mt-4 sm:mt-6 text-gray-600">
-          Already have an account?{" "}
-          <Link href="/login" className="text-blue-600 hover:underline font-medium">
-            Sign in
+          Don't have an account?{" "}
+          <Link href="/signup" className="text-blue-600 hover:underline font-medium">
+            Sign up
           </Link>
         </p>
       </div>
     </div>
   );
-}
+} 

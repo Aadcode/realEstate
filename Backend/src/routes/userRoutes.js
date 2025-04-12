@@ -1,9 +1,17 @@
-import { getAllUsers, signIn, signUp } from '../controllers/userControllers.js';
+// routes/userRoutes.js
+import {
+  registerUser,
+  loginUser,
+  getAllUsers,
+  updateUser,
+   getAdmin
+} from '../controllers/userControllers.js';
 
-const userRoutes = async (fastify) => {
-  fastify.post('/user/signup', signUp);
-  fastify.post('/user/signin', signIn);
-  fastify.get("/users",getAllUsers)
-};
 
-export default userRoutes;
+export default async function userRoutes(fastify) {
+  fastify.post('/register', registerUser);
+  fastify.post('/login', loginUser);
+  fastify.get('/users', getAllUsers);
+  fastify.patch('/:userId/role', updateUser);
+  fastify.get('/admin',getAdmin)
+}

@@ -1,11 +1,17 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Sidebar = () => {
   const router = useRouter();
   const pathname = usePathname();
   const [expandedSection, setExpandedSection] = useState("dashboard");
+  const [userRole, setUserRole] = useState(null);
+
+  useEffect(() => {
+    const userData = JSON.parse(localStorage.getItem('user'));
+    setUserRole(userData?.role);
+  }, []);
 
   const toggleSection = (section) => {
     setExpandedSection(expandedSection === section ? null : section);
@@ -34,7 +40,6 @@ const Sidebar = () => {
       title: "Agents",
       items: [
         { path: "/agents", label: "All Agents" },
-        { path: "/signup", label: "Add Agent" }
       ]
     },
     {
@@ -43,17 +48,20 @@ const Sidebar = () => {
       title: "Property",
       items: [
         { path: "/propertyDetails", label: "Property Details" },
-        { path: "/addProperty", label: "Add Property" }
+        { path: "/addProperty", label: "Add Property" },
+        { path:"/propertyList",label:"All Properties"}
       ]
     },
-    {
+    // Only show App section if user is ADMIN
+    ...(userRole === 'ADMIN' ? [{
       section: "App",
       icon: "https://cdn.builder.io/api/v1/image/assets/3911420c7fc948b98bd6faf80795a0cb/53f320a0e0e6dc706b2becd515691efaa0225c9c?placeholderIfAbsent=true",
-      title: "App",
+      title: "Admin",
       items: [
-        { path: "/profile", label: "Profile" },
+        { path: "/profile", label: "Admin Profile" },
+        { path: "/addAgent", label: "Add Agent" },
       ]
-    },
+    }] : [])
   ];
 
   return (

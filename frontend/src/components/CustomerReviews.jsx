@@ -27,10 +27,10 @@ const ReviewCard = ({ comment, time, imageSrc, rating, customerName }) => {
       <div className="flex flex-wrap items-center gap-4">
         {/* Customer Image */}
         <img
-          src={imageSrc || "https://via.placeholder.com/58"}
+          src={imageSrc || "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60"}
           alt="Customer"
           className="w-12 h-12 rounded-full object-cover"
-          onError={(e) => (e.target.src = "https://via.placeholder.com/58")}
+          onError={(e) => (e.target.src = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60")}
         />
 
         {/* Customer Name & Rating */}
@@ -72,7 +72,7 @@ const CustomerReviews = () => {
   }, []);
 
   return (
-    <section className="px-4 py-6 w-full max-w-xl mx-auto">
+    <section className="px-4 py-6 w-full">
       <article className="w-full bg-white rounded-xl shadow-md p-6">
         <header className="flex justify-between items-center pb-4 border-b border-gray-200">
           <h2 className="text-lg font-semibold text-black">Customer Reviews</h2>
@@ -82,13 +82,13 @@ const CustomerReviews = () => {
           {loading ? (
             <p>Loading reviews...</p>
           ) : reviews.length > 0 ? (
-            reviews.map((review, index) => (
+            reviews.slice(0, 2).map((review, index) => (
               <ReviewCard
                 key={index}
                 comment={review.comment}
                 time={new Date(review.createdAt).toLocaleString()}
-                imageSrc={review.customer?.profileImage}
-                customerName={review.customer?.name}
+                imageSrc={review.user?.avatar}
+                customerName={review.user?.name}
                 rating={review.rating}
               />
             ))

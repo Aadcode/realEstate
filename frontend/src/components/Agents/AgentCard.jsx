@@ -13,15 +13,19 @@ const AgentCard = ({ agent }) => {
     return styles[color] || "bg-indigo-700 hover:bg-indigo-800 text-white";
   };
 
+
   return (
     <div className="bg-white shadow-md rounded-xl p-5 transition-all hover:shadow-lg">
       <div className="flex items-center gap-4">
         {/* Profile Image */}
         <div className="w-14 h-14 rounded-full border-2 border-gray-200 overflow-hidden shadow-sm">
           <img
-            src={"https://cdn.builder.io/api/v1/image/assets/3911420c7fc948b98bd6faf80795a0cb/ceb33f7fa154e794190015fb969d1df549fdf958?placeholderIfAbsent=true"}
+            src={agent.avatar}
             alt={agent.name}
             className="object-cover w-full h-full"
+            onError={(e) => {
+              e.target.src = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60";
+            }}
           />
         </div>
 

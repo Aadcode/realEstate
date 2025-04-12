@@ -6,20 +6,6 @@ import * as am5xy from "@amcharts/amcharts5/xy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
 const yearlyData = {
-  2023: [
-    { month: "Jan", revenue: 42000 },
-    { month: "Feb", revenue: 38000 },
-    { month: "Mar", revenue: 45000 },
-    { month: "Apr", revenue: 47000 },
-    { month: "May", revenue: 50000 },
-    { month: "Jun", revenue: 48000 },
-    { month: "Jul", revenue: 53000 },
-    { month: "Aug", revenue: 55000 },
-    { month: "Sep", revenue: 52000 },
-    { month: "Oct", revenue: 58000 },
-    { month: "Nov", revenue: 60000 },
-    { month: "Dec", revenue: 65000 },
-  ],
   2024: [
     { month: "Jan", revenue: 46000 },
     { month: "Feb", revenue: 42000 },

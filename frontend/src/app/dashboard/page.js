@@ -61,19 +61,14 @@ const Dashboard = () => {
           </div>
 
           {/* Layer 3: Properties Map and Recent Properties */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          <div className="grid grid-cols-4 gap-4">
             {/* Properties Map */}
-            <div className="rounded-xl bg-white p-6 shadow-md">
-              <h2 className="text-xl font-semibold mb-6">Properties Location</h2>
+            <div className="rounded-xl bg-white p-4 shadow-md max-[1280px]:col-span-4 col-span-3">
               <PropertiesMap />
             </div>
 
             {/* Recent Properties */}
-            <div className="rounded-xl bg-white p-6 shadow-md">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold">Recent Properties</h2>
-                <button className="text-blue-600 text-sm hover:text-blue-700 transition-colors">View All</button>
-              </div>
+            <div className="rounded-xl bg-white p-4 shadow-md col-span-1 max-[1280px]:col-span-4">
               <RecentProperty />
             </div>
           </div>

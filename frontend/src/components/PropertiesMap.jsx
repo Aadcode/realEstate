@@ -96,7 +96,7 @@ const PropertiesMap = () => {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-[0px_5px_5px_rgba(82,63,105,0.05)] p-6">
+    <div className="bg-white rounded-xl shadow-[0px_5px_5px_rgba(82,63,105,0.05)]">
       <header className="flex justify-between items-center mb-6">
         <h2 className="text-lg font-semibold text-black">
           Properties Map Location
@@ -110,8 +110,8 @@ const PropertiesMap = () => {
         </button>
       </header>
 
-      <div className="flex gap-5 max-md:flex-col">
-        <div className="w-1/2 max-md:w-full">
+      <div className="flex gap-5 max-lg:flex-col">
+        <div className="flex-1 w-full">
           <div className="px-4">
             {locations.map((location, index) => (
               <LocationProgress
@@ -123,7 +123,7 @@ const PropertiesMap = () => {
           </div>
         </div>
 
-        <div className="w-1/2 max-md:w-full">
+        <div className="flex-1 w-full">
           <MapChart />
         </div>
       </div>

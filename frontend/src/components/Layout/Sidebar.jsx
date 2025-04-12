@@ -34,7 +34,7 @@ const Sidebar = () => {
       title: "Agents",
       items: [
         { path: "/agents", label: "All Agents" },
-        { path: "/signup", label: "Add Agent" }
+        { path: "/addAgent", label: "Add Agent" }
       ]
     },
     {

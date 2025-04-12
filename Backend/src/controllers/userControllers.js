@@ -22,7 +22,7 @@ const PROFILE_IMAGES = [
 // Register a new user
 export const registerUser = async (request, reply) => {
     try {
-        const { name, email, password, phone, location } = request.body;
+        const { name, email, password, phone, location,role } = request.body;
 
         // Check if user already exists
         const existingUser = await prisma.user.findUnique({
@@ -48,7 +48,7 @@ export const registerUser = async (request, reply) => {
                 phone,
                 location,
                 avatar: randomAvatar,
-                role: 'CUSTOMER' // Default role
+                role: role || "CUSTOMER" 
             }
         });
 
@@ -139,20 +139,14 @@ export const loginUser = async (request, reply) => {
 // Update user
 export const updateUser = async (request, reply) => {
     try {
-        const { id } = request.params;
-        const { name, email, role } = request.body;
-
-        // Validate role if provided
-        if (role && !['ADMIN', 'AGENT', 'CUSTOMER'].includes(role)) {
-            throw new ApiError(400, 'Invalid role. Must be ADMIN, AGENT, or CUSTOMER');
-        }
+        const id= request.params.userId;
+        const { role } = request.body;
+        console.log(id)
 
         const user = await prisma.user.update({
             where: { id: parseInt(id) },
             data: {
-                name,
-                email,
-                ...(role && { role }) // Only update role if provided
+                ...(role && { role }) 
             },
             select: {
                 id: true,

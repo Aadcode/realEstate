@@ -142,6 +142,7 @@ const PropertyForm = () => {
     }
 
     const formData = new FormData();
+    const currentUser = JSON.parse(localStorage.getItem("user"))
     
     // Convert propertyStatus to match backend enum format
     const status = propertyData.propertyStatus.toUpperCase().replace(' ', '_');
@@ -155,7 +156,9 @@ const PropertyForm = () => {
     formData.append('state', propertyData.state);
     formData.append('price', propertyData.price);
     formData.append('zipCode', propertyData.zipCode || '112324');
-    formData.append('userId', localStorage.getItem('userId') || '1');
+    formData.append('userId', currentUser.id || '1');
+    console.log(currentUser.id)
+
     
     // Add property details
     formData.append('bedrooms', propertyData.beds);

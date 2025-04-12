@@ -2,18 +2,16 @@ import React from "react";
 
 const DashboardHeader = () => {
   return (
-    <header className="flex flex-wrap items-start w-full max-md:max-w-full">
-      <div className="flex flex-col flex-1 shrink items-start basis-0 min-w-[244px] pr-[1323px] max-md:max-w-full">
-        <div className="max-w-full w-[244px]">
-          <h1 className="w-full text-3xl font-semibold text-black whitespace-nowrap">
-            Dashboard
-          </h1>
-          <p className="mt-2 w-full text-sm leading-6 text-zinc-500">
-            Welcome to Omah Property 
-          </p>
-        </div>
+    <header className="flex flex-wrap justify-between items-center w-full max-md:max-w-full">
+      <div className="flex flex-col items-start md:max-w-full">
+        <h1 className="w-full text-3xl font-semibold text-black whitespace-nowrap">
+          Dashboard
+        </h1>
+        <p className="mt-2 w-full text-sm leading-6 text-zinc-500">
+          Welcome to Omah Property
+        </p>
       </div>
-      <button className="px-5 pt-2.5 pb-3 text-base text-center text-indigo-700 whitespace-nowrap rounded-xl border border-solid bg-indigo-700 bg-opacity-10 border-indigo-700 border-opacity-10 max-md:px-5">
+      <button className="px-5 py-2 text-base text-center font-medium text-indigo-500 whitespace-nowrap rounded-xl border border-solid bg-indigo-100 bg-opacity-10 border-indigo-400 border-opacity-10 max-md:px-5">
         Refresh
       </button>
     </header>

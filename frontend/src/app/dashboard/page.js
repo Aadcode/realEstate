@@ -21,38 +21,22 @@ const Dashboard = () => {
 
   return (
     <Layout>
-      <div className="max-w-[1744px] w-full px-4 sm:px-6 lg:px-8 mx-auto">
+      <div className="max-w-[1744px] w-full px-4 sm:px-6 lg:px-8 mx-auto text-black">
         <DashboardHeader />
-        
+
         {/* Main Content */}
         <div className="py-6 space-y-6">
           {/* Layer 1: Total Properties and Total Revenue */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 items-stretch">
             {/* Total Properties */}
             <StatisticsCards />
-            
+
             {/* Revenue Chart */}
-            <div className="rounded-xl bg-white p-6 shadow-md">
-              <div className="flex justify-between items-center mb-4">
-                <div className="flex flex-col">
-                  <h2 className="text-xl font-semibold mb-2">Revenue Overview</h2>
-                  <div className="text-sm text-gray-500">Last year $563,443</div>
-                </div>
-                <div className="flex gap-4">
-                  <div className="flex gap-2">
-                    <button className="px-4 py-1.5 text-sm bg-blue-100 text-blue-600 rounded-md hover:bg-blue-200 transition-colors">Month</button>
-                    <button className="px-4 py-1.5 text-sm bg-gray-100 text-gray-600 rounded-md hover:bg-gray-200 transition-colors">Week</button>
-                  </div>
-                  <div className="flex gap-2">
-                    <button className="px-3 py-1 text-sm bg-gray-100 text-gray-600 rounded-md hover:bg-gray-200 transition-colors">2023</button>
-                    <button className="px-3 py-1 text-sm bg-blue-600 text-white rounded-md">2024</button>
-                  </div>
-                </div>
-              </div>
+            <div className="rounded-xl bg-white p-4 shadow-md">
               <RevenueChart />
             </div>
           </div>
-          
+
           {/* Layer 2: Overview Pie Chart and Customer Reviews */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
             {/* Overview Pie Chart */}
@@ -60,12 +44,12 @@ const Dashboard = () => {
               <h2 className="text-xl font-semibold mb-6">Property Overview</h2>
               <UserDistributionChart />
             </div>
-            
+
             {/* Customer Reviews */}
-            <div className="rounded-xl bg-white p-6 shadow-md">
-              <div className="flex justify-between items-center mb-6">
-                <h2 className="text-xl font-semibold">Customer Reviews</h2>
-                <button 
+            <div className="rounded-xl bg-white p-6 shadow-md flex flex-col gap-4">
+              <div className="flex justify-between items-center ">
+                <h2 className="text-xl font-semibold text-black">Customer Reviews</h2>
+                <button
                   onClick={handleViewAllReviews}
                   className="text-blue-600 text-sm hover:text-blue-700 transition-colors"
                 >
@@ -75,7 +59,7 @@ const Dashboard = () => {
               <CustomerReviews />
             </div>
           </div>
-          
+
           {/* Layer 3: Properties Map and Recent Properties */}
           <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
             {/* Properties Map */}
@@ -83,7 +67,7 @@ const Dashboard = () => {
               <h2 className="text-xl font-semibold mb-6">Properties Location</h2>
               <PropertiesMap />
             </div>
-            
+
             {/* Recent Properties */}
             <div className="rounded-xl bg-white p-6 shadow-md">
               <div className="flex justify-between items-center mb-6">

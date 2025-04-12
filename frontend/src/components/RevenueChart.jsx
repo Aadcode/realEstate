@@ -119,10 +119,10 @@ const RevenueChart = () => {
   }, [year]);
 
   return (
-    <section className="grow px-4 min-h-[390px] max-md:max-w-full">
-      <article className="w-full bg-white rounded-xl shadow-[0px_5px_5px_rgba(82,63,105,0.05)] max-md:max-w-full">
-        <header className="flex flex-wrap justify-between items-center px-8 pt-6 w-full rounded-xl max-md:px-5 max-md:max-w-full">
-          <h2 className="pb-2 text-lg font-semibold text-black">Total Revenue</h2>
+    <section className="grow max-md:max-w-full">
+      <article className="w-full flex flex-col gap-4">
+        <header className="flex flex-wrap justify-between items-center w-full rounded-xl max-md:max-w-full">
+          <h2 className="text-lg font-semibold text-black">Total Revenue</h2>
           <div className="flex gap-2">
             {Object.keys(yearlyData).map((y) => (
               <button
@@ -138,16 +138,16 @@ const RevenueChart = () => {
           </div>
         </header>
 
-        <div className="px-8 pt-2 w-full max-md:px-5 max-md:max-w-full">
-          <div className="flex flex-wrap items-center justify-between w-full max-md:max-w-full">
-            <h3 className="text-3xl font-semibold text-black whitespace-nowrap">
+        <div className="w-full max-md:max-w-full">
+          <div className="flex flex-wrap items-center justify-start gap-4 w-full max-md:max-w-full">
+            <p className="text-xl font-semibold text-black whitespace-nowrap">
               ${year === "2024" ? "678,345" : "612,900"}
-            </h3>
+            </p>
             <p className="text-sm text-zinc-500">last year ${year === "2024" ? "563,443" : "500,100"}</p>
           </div>
 
           {/* Chart */}
-          <div className="pt-6 pb-4 w-full min-h-[250px]">
+          <div className="w-full min-h-[250px] py-2 flex items-center justify-center">
             <div ref={chartRef} className="w-full h-[250px]" />
           </div>
         </div>

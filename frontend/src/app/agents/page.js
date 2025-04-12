@@ -19,7 +19,14 @@ const AgentsPage = () => {
         }
         const data = await response.json();
         if (data.success && Array.isArray(data.data)) {
-          setAgents(data.data);
+          // Filter users to only show agents and include avatar
+          const agentUsers = data.data
+            .filter(user => user.role === 'AGENT')
+            .map(agent => ({
+              ...agent,
+              avatar: agent.avatar || "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60"
+            }));
+          setAgents(agentUsers);
         } else {
           setAgents([]);
         }
@@ -50,8 +57,8 @@ const AgentsPage = () => {
               <p className="text-center text-gray-500">No agents found.</p>
             ) : (
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-                {agents.map((agent, index) => (
-                  <AgentCard key={agent.id || index} agent={agent} />
+                {agents.map((agent) => (
+                  <AgentCard key={agent.id} agent={agent} />
                 ))}
               </div>
             )}

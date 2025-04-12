@@ -78,9 +78,9 @@ const PropertyForm = () => {
   const handleFeatureToggle = (feature) => {
     setPropertyData(prev => ({
       ...prev,
-      selectedFeatures: prev.selectedFeatures.includes(feature)
-        ? prev.selectedFeatures.filter(item => item !== feature)
-        : [...prev.selectedFeatures, feature]
+      selectedFeatures: prev.selectedFeatures.includes(feature.name)
+        ? prev.selectedFeatures.filter(item => item !== feature.name)
+        : [...prev.selectedFeatures, feature.name]
     }));
   };
 
@@ -142,6 +142,7 @@ const PropertyForm = () => {
     }
 
     const formData = new FormData();
+    const currentUser = JSON.parse(localStorage.getItem("user"))
     
     // Convert propertyStatus to match backend enum format
     const status = propertyData.propertyStatus.toUpperCase().replace(' ', '_');
@@ -154,8 +155,20 @@ const PropertyForm = () => {
     formData.append('city', propertyData.city);
     formData.append('state', propertyData.state);
     formData.append('price', propertyData.price);
-    formData.append('zipCode', 112324);
-    formData.append('userId', localStorage.getItem('userId') || '1'); // Get from auth context or localStorage
+    formData.append('zipCode', propertyData.zipCode || '112324');
+    formData.append('userId', currentUser.id || '1');
+    console.log(currentUser.id)
+
+    
+    // Add property details
+    formData.append('bedrooms', propertyData.beds);
+    formData.append('bathrooms', propertyData.baths);
+    formData.append('squareFeet', propertyData.area);
+    
+    // Add features as array instead of JSON string
+    propertyData.selectedFeatures.forEach(featureName => {
+      formData.append('features[]', featureName);
+    });
     
     // Handle multiple images
     propertyData.images.forEach((image) => {
@@ -438,19 +451,19 @@ const PropertyForm = () => {
             <label 
               key={feature.id} 
               className={`flex items-center p-3 rounded-lg transition-colors ${
-                propertyData.selectedFeatures.includes(feature.id)
+                propertyData.selectedFeatures.includes(feature.name)
                   ? 'bg-blue-100'
                   : 'bg-gray-50 hover:bg-gray-100'
               }`}
             >
               <input
                 type="checkbox"
-                checked={propertyData.selectedFeatures.includes(feature.id)}
-                onChange={() => handleFeatureToggle(feature.id)}
+                checked={propertyData.selectedFeatures.includes(feature.name)}
+                onChange={() => handleFeatureToggle(feature)}
                 className="mr-3 h-5 w-5 text-blue-600 rounded border-gray-300 focus:ring-blue-500"
               />
               <span className={`font-medium ${
-                propertyData.selectedFeatures.includes(feature.id)
+                propertyData.selectedFeatures.includes(feature.name)
                   ? 'text-blue-800'
                   : 'text-gray-700'
               }`}>

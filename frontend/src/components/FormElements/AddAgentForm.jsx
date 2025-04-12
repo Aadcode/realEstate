@@ -16,21 +16,42 @@ const AddAgentForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // You can validate fields or simulate API response here
+    
+        const formData = new FormData(e.target);
+        const name = formData.get('name');
+        const email = formData.get('email');
+        const password = formData.get('password');
+        const phone = formData.get('phone');
+        const location = formData.get('location');
+    
         if (selected === 'Choose...') {
             toast.error("Please select a role.");
             return;
         }
-
+    
+        const role = selected.toUpperCase(); // Convert to CUSTOMER or AGENT
+    
         try {
-            // Simulate async operation
-            await new Promise(res => setTimeout(res, 1000));
+            const response = await fetch("http://localhost:8000/api/v1/register", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ name, email, password, phone, location, role })
+            });
+    
+            const data = await response.json();
+    
+            if (!response.ok) {
+                throw new Error(data?.message || 'Something went wrong');
+            }
+    
             toast.success(`Successfully added new ${selected}`);
         } catch (error) {
-            toast.error("Something went wrong.");
+            toast.error(error.message || "Something went wrong.");
         }
     };
+    
 
     return (
         <div>

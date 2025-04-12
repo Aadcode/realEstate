@@ -10,6 +10,7 @@ datasource db {
 }
 
 enum Role {
+  ADMIN
   AGENT
   CUSTOMER
 }
@@ -44,9 +45,9 @@ model User {
   id          Int      @id @default(autoincrement())
   name        String   @db.VarChar(120)
   email       String   @unique @db.VarChar(255)
-  phone       String   @db.VarChar(20)
+  phone       String   @unique @db.VarChar(20)
   password    String   @db.VarChar(255)
-  avatar      String   @db.VarChar(255)
+  avatar      String?  @db.VarChar(255)
   location    String   @db.VarChar(120)
   role        Role     @default(CUSTOMER)
   summary     String?  @db.VarChar(150)
@@ -125,7 +126,7 @@ model Review {
   comment   String       @db.Text
   rating    Int          @default(5)
   images    String[]
-  status    ReviewStatus
+  status    ReviewStatus @default(All_Review)
   createdAt DateTime     @default(now())
 
   propertyId Int

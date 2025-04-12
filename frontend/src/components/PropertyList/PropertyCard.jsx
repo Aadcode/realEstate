@@ -162,7 +162,7 @@ const PropertyCard = ({
         {features && features.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-2">
             {features.map((feature, index) => (
-              <span key={index} className="px-2 py-1 text-xs bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
+              <span key={index} className="px-2 py-1 text-xs text-black bg-gray-100 rounded-md hover:bg-gray-200 transition-colors">
                 {feature}
               </span>
             ))}

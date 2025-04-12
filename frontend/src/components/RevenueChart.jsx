@@ -5,40 +5,12 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-const yearlyData = {
-  2023: [
-    { month: "Jan", revenue: 42000 },
-    { month: "Feb", revenue: 38000 },
-    { month: "Mar", revenue: 45000 },
-    { month: "Apr", revenue: 47000 },
-    { month: "May", revenue: 50000 },
-    { month: "Jun", revenue: 48000 },
-    { month: "Jul", revenue: 53000 },
-    { month: "Aug", revenue: 55000 },
-    { month: "Sep", revenue: 52000 },
-    { month: "Oct", revenue: 58000 },
-    { month: "Nov", revenue: 60000 },
-    { month: "Dec", revenue: 65000 },
-  ],
-  2024: [
-    { month: "Jan", revenue: 46000 },
-    { month: "Feb", revenue: 42000 },
-    { month: "Mar", revenue: 49000 },
-    { month: "Apr", revenue: 51000 },
-    { month: "May", revenue: 54000 },
-    { month: "Jun", revenue: 56000 },
-    { month: "Jul", revenue: 58000 },
-    { month: "Aug", revenue: 62000 },
-    { month: "Sep", revenue: 59000 },
-    { month: "Oct", revenue: 64000 },
-    { month: "Nov", revenue: 67000 },
-    { month: "Dec", revenue: 70000 },
-  ],
-};
+// Import data from the external file
+import { yearlyData, grossIncome } from '../extractData/rentalData.js';
 
 const RevenueChart = () => {
   const chartRef = useRef(null);
-  const [year, setYear] = useState("2024");
+  const [year, setYear] = useState("2025");
   const chartObj = useRef({});
 
   useLayoutEffect(() => {
@@ -118,6 +90,8 @@ const RevenueChart = () => {
     }
   }, [year]);
 
+  const totalRevenue = yearlyData[year].reduce((acc, curr) => acc + curr.revenue, 0);
+
   return (
     <section className="grow max-md:max-w-full">
       <article className="w-full flex flex-col gap-4">
@@ -141,9 +115,8 @@ const RevenueChart = () => {
         <div className="w-full max-md:max-w-full">
           <div className="flex flex-wrap items-center justify-start gap-4 w-full max-md:max-w-full">
             <p className="text-xl font-semibold text-black whitespace-nowrap">
-              ${year === "2024" ? "678,345" : "612,900"}
+              ${totalRevenue.toLocaleString()}
             </p>
-            <p className="text-sm text-zinc-500">last year ${year === "2024" ? "563,443" : "500,100"}</p>
           </div>
 
           {/* Chart */}

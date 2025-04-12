@@ -117,7 +117,6 @@ const RevenueChart = () => {
             <h3 className="text-3xl font-semibold text-black whitespace-nowrap">
               ${totalRevenue.toLocaleString()}
             </h3>
-            <p className="text-sm text-zinc-500">last year ${grossIncome.toLocaleString()}</p>
           </div>
 
           {/* Chart */}

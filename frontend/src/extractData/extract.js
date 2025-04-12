@@ -1,6 +1,5 @@
-// import { google } from "googleapis";
-// import fs from "fs-extra";
-
+// import { google } from 'googleapis';
+// import fs from 'fs-extra';
 // async function authorize() {
 //   const auth = new google.auth.GoogleAuth({
 //     keyFile: "service-account.json",
@@ -409,7 +408,7 @@
 //     cleanEmptyFields(result.monthlyExpenses);
 //     cleanEmptyFields(result.operatingExpenses);
 
-//     fs.writeFileSync("property_management_data.json", JSON.stringify(result, null, 2));
+//     writeFileSync("property_management_data.json", JSON.stringify(result, null, 2));
 //     console.log("Property management data saved to property_management_data.json");
 
 //     return result;
@@ -430,10 +429,190 @@
 //     console.error("Error:", error);
 //   });
 
-import { google } from "googleapis";
-import fs from "fs";
-import path from "path";
 
+
+// function parsePropertyData(data) {
+//   const result = {
+//     year: null,
+//     summary: {},
+//     properties: [],
+//     securityDeposits: {
+//       deposits: [],
+//       petDeposits: [],
+//       other: 0,
+//       total: 0,
+//     },
+//     rentalIncome: [],
+//     otherIncome: [],
+//     monthlyExpenses: [],
+//     operatingExpenses: [],
+//   };
+
+//   let i = 0;
+
+//   // Parse Year & Summary
+//   for (; i < data.length; i++) {
+//     if (data[i][0] === 'Year:') {
+//       result.year = data[i][1];
+//       result.summary = {
+//         grossIncome: data[i][4],
+//         totalExpenses: data[i][8],
+//         netIncome: data[i][12],
+//         deposits: data[i][15]
+//       };
+      
+//       break;
+//     }
+//   }
+
+//   // Parse Properties
+//   for (; i < data.length; i++) {
+//     if (data[i][0] === 'Property Code') {
+//       i++;
+//       while (data[i] && data[i][0]) {
+//         const row = data[i];
+//         result.properties.push({
+//           code: row[0],
+//           address: row[1],
+//           rent: row[4],
+//           tenant: row[5],
+//           phone: row[7],
+//           moveIn: row[9],
+//           renewal: row[11],
+//           value: row[13],
+//           downPayment: row[14]
+//         });
+//         i++;
+//       }
+//       break;
+//     }
+//   }
+
+//   // Parse Security Deposits
+//   for (; i < data.length; i++) {
+//     if (data[i][0] === 'Security Deposits') {
+//       const depositRow = data[i + 2];
+//       const petRow = data[i + 3];
+//       const otherRow = data[i + 4];
+//       const totalRow = data[i + 5];
+
+//       for (let j = 1; j < depositRow.length - 1; j += 2) {
+//         result.securityDeposits.deposits.push({
+//           date: depositRow[j],
+//           amount: depositRow[j + 1]
+//         });
+//       }
+
+//       for (let j = 1; j < petRow.length - 1; j += 2) {
+//         if (petRow[j]) {
+//           result.securityDeposits.petDeposits.push({
+//             date: petRow[j],
+//             amount: petRow[j + 1]
+//           });
+//         }
+//       }
+
+//       result.securityDeposits.other = otherRow[otherRow.length - 1];
+//       result.securityDeposits.total = totalRow[totalRow.length - 1];
+//       break;
+//     }
+//   }
+
+//   // Parse Rental Income
+//   for (; i < data.length; i++) {
+//     if (data[i][0] === 'Rental Income') {
+//       while (data[i + 2] && data[i + 2][0] && data[i + 2][0].endsWith('.')) {
+//         const row = data[i + 2];
+//         result.rentalIncome.push({
+//           month: row[0],
+//           A: row[2],
+//           B: row[5],
+//           C: row[8],
+//           D: row[11],
+//           E: row[14],
+//           total: row[16]
+//         });
+//         i++;
+//       }
+//       break;
+//     }
+//   }
+
+//   // Parse Other Income
+//   for (; i < data.length; i++) {
+//     if (data[i][0] === 'Other Income') {
+//       while (data[i + 2] && data[i + 2][0] && data[i + 2][0] !== 'Total:') {
+//         const row = data[i + 2];
+//         result.otherIncome.push({
+//           type: row[0],
+//           A: { date: row[1], amount: row[2] },
+//           B: { date: row[4], amount: row[5] },
+//           C: { date: row[7], amount: row[8] },
+//           D: { date: row[10], amount: row[11] },
+//           E: { date: row[13], amount: row[14] },
+//           total: row[16]
+//         });
+//         i++;
+//       }
+//       break;
+//     }
+//   }
+
+//   // Parse Monthly Expenses
+//   for (; i < data.length; i++) {
+//     if (data[i][0] === 'Monthly Expenses') {
+//       while (data[i + 1] && data[i + 1][0] && data[i + 1][0] !== 'Total:') {
+//         const row = data[i + 1];
+//         const name = row[0];
+//         const monthly = row.slice(1, 13);
+//         const total = row[row.length - 1];
+//         result.monthlyExpenses.push({ name, monthly, total });
+//         i++;
+//       }
+//       break;
+//     }
+//   }
+
+//   // Parse Operating Expenses
+//   for (; i < data.length; i++) {
+//     if (data[i][0] === 'Operating Expenses') {
+//       while (data[i + 1] && data[i + 1][0] && data[i + 1][0] !== 'Total:') {
+//         const row = data[i + 1];
+//         const name = row[0];
+//         const monthly = row.slice(1, 13);
+//         const total = row[row.length - 1];
+//         result.operatingExpenses.push({ name, monthly, total });
+//         i++;
+//       }
+//       break;
+//     }
+//   }
+
+//   return result;
+// }
+
+// // Main runner
+// const spreadsheetId = "1dcocrw9Ezj2WxgrXu_eA7W9ZtYuO-W84mhNSQmqWe6s";
+
+// extractPropertyData(spreadsheetId)
+//   .then((data) => {
+//     const structuredJson = parsePropertyData(data);
+
+//     const output = `export const propertyData = ${JSON.stringify(structuredJson, null, 2)};`;
+
+//     fs.writeFileSync(path.resolve('property-data.js'), output, 'utf8');
+
+//     console.log('✅ Data written to property-data.js');
+//   })
+//   .catch((error) => {
+//     console.error('❌ Error:', error);
+//   });
+
+
+import { google } from "googleapis";
+import fs from "fs-extra";
+
+// === Google Sheets Authorization ===
 async function authorize() {
   const auth = new google.auth.GoogleAuth({
     keyFile: "service-account.json",
@@ -442,197 +621,83 @@ async function authorize() {
   return auth.getClient();
 }
 
+const spreadsheetId = "1dcocrw9Ezj2WxgrXu_eA7W9ZtYuO-W84mhNSQmqWe6s";
+
+// === Fetch Google Sheet Data ===
 async function extractPropertyData(spreadsheetId) {
   try {
     const auth = await authorize();
     const sheets = google.sheets({ version: "v4", auth });
 
-    const propertyData = await sheets.spreadsheets.values.get({
+    const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
       range: "Data Sheet!B3:R95",
     });
 
-    return propertyData.data.values;
-
+    return response.data.values;
   } catch (error) {
     console.error("Error extracting property data:", error);
     throw error;
   }
 }
 
-function parsePropertyData(data) {
-  const result = {
-    year: null,
-    summary: {},
-    properties: [],
-    securityDeposits: {
-      deposits: [],
-      petDeposits: [],
-      other: 0,
-      total: 0,
-    },
-    rentalIncome: [],
-    otherIncome: [],
-    monthlyExpenses: [],
-    operatingExpenses: [],
-  };
+// === Extract Gross Income from First Row ===
+function extractGrossIncome(row) {
+  const index = row.findIndex(cell =>
+    typeof cell === "string" && cell.toLowerCase().includes("gross income")
+  );
 
-  let i = 0;
+  if (index === -1) {
+    console.warn("⚠️ 'Gross Income' label not found.");
+    return 0;
+  }
 
-  // Parse Year & Summary
-  for (; i < data.length; i++) {
-    if (data[i][0] === 'Year:') {
-      result.year = data[i][1];
-      result.summary = {
-        grossIncome: data[i][4],
-        totalExpenses: data[i][8],
-        netIncome: data[i][12],
-        deposits: data[i][15]
-      };
-      
-      break;
+  for (let i = index + 1; i <= index + 3 && i < row.length; i++) {
+    const value = row[i];
+    if (typeof value === "string" && /\d/.test(value)) {
+      const parsed = parseFloat(value.replace(/[^\d.-]/g, ""));
+      if (!isNaN(parsed)) return parsed;
     }
   }
 
-  // Parse Properties
-  for (; i < data.length; i++) {
-    if (data[i][0] === 'Property Code') {
-      i++;
-      while (data[i] && data[i][0]) {
-        const row = data[i];
-        result.properties.push({
-          code: row[0],
-          address: row[1],
-          rent: row[4],
-          tenant: row[5],
-          phone: row[7],
-          moveIn: row[9],
-          renewal: row[11],
-          value: row[13],
-          downPayment: row[14]
-        });
-        i++;
-      }
-      break;
-    }
-  }
-
-  // Parse Security Deposits
-  for (; i < data.length; i++) {
-    if (data[i][0] === 'Security Deposits') {
-      const depositRow = data[i + 2];
-      const petRow = data[i + 3];
-      const otherRow = data[i + 4];
-      const totalRow = data[i + 5];
-
-      for (let j = 1; j < depositRow.length - 1; j += 2) {
-        result.securityDeposits.deposits.push({
-          date: depositRow[j],
-          amount: depositRow[j + 1]
-        });
-      }
-
-      for (let j = 1; j < petRow.length - 1; j += 2) {
-        if (petRow[j]) {
-          result.securityDeposits.petDeposits.push({
-            date: petRow[j],
-            amount: petRow[j + 1]
-          });
-        }
-      }
-
-      result.securityDeposits.other = otherRow[otherRow.length - 1];
-      result.securityDeposits.total = totalRow[totalRow.length - 1];
-      break;
-    }
-  }
-
-  // Parse Rental Income
-  for (; i < data.length; i++) {
-    if (data[i][0] === 'Rental Income') {
-      while (data[i + 2] && data[i + 2][0] && data[i + 2][0].endsWith('.')) {
-        const row = data[i + 2];
-        result.rentalIncome.push({
-          month: row[0],
-          A: row[2],
-          B: row[5],
-          C: row[8],
-          D: row[11],
-          E: row[14],
-          total: row[16]
-        });
-        i++;
-      }
-      break;
-    }
-  }
-
-  // Parse Other Income
-  for (; i < data.length; i++) {
-    if (data[i][0] === 'Other Income') {
-      while (data[i + 2] && data[i + 2][0] && data[i + 2][0] !== 'Total:') {
-        const row = data[i + 2];
-        result.otherIncome.push({
-          type: row[0],
-          A: { date: row[1], amount: row[2] },
-          B: { date: row[4], amount: row[5] },
-          C: { date: row[7], amount: row[8] },
-          D: { date: row[10], amount: row[11] },
-          E: { date: row[13], amount: row[14] },
-          total: row[16]
-        });
-        i++;
-      }
-      break;
-    }
-  }
-
-  // Parse Monthly Expenses
-  for (; i < data.length; i++) {
-    if (data[i][0] === 'Monthly Expenses') {
-      while (data[i + 1] && data[i + 1][0] && data[i + 1][0] !== 'Total:') {
-        const row = data[i + 1];
-        const name = row[0];
-        const monthly = row.slice(1, 13);
-        const total = row[row.length - 1];
-        result.monthlyExpenses.push({ name, monthly, total });
-        i++;
-      }
-      break;
-    }
-  }
-
-  // Parse Operating Expenses
-  for (; i < data.length; i++) {
-    if (data[i][0] === 'Operating Expenses') {
-      while (data[i + 1] && data[i + 1][0] && data[i + 1][0] !== 'Total:') {
-        const row = data[i + 1];
-        const name = row[0];
-        const monthly = row.slice(1, 13);
-        const total = row[row.length - 1];
-        result.operatingExpenses.push({ name, monthly, total });
-        i++;
-      }
-      break;
-    }
-  }
-
-  return result;
+  console.warn("⚠️ 'Gross Income' value not found after label.");
+  return 0;
 }
 
-// Main runner
-const spreadsheetId = "1dcocrw9Ezj2WxgrXu_eA7W9ZtYuO-W84mhNSQmqWe6s";
+// === Process Sheet into Desired Format ===
+function processRentalData(data) {
+  const rentalIncomeStart = data.findIndex(row => row[0] === 'Rental Income') + 2;
+  const rentalIncomeSection = data.slice(rentalIncomeStart, rentalIncomeStart + 12);
 
-extractPropertyData(spreadsheetId)
-  .then((data) => {
-    const structuredJson = parsePropertyData(data);
+  const monthlyRentals = rentalIncomeSection.map(row => ({
+    month: row[0].replace('.', '').substring(0, 3),
+    revenue: parseFloat(row[row.length - 1].replace(/[^\d.-]/g, '')),
+  }));
 
-    const output = `export const propertyData = ${JSON.stringify(structuredJson, null, 2)};`;
+  const grossIncome = extractGrossIncome(data[0]);
 
-    fs.writeFileSync(path.resolve('property-data.js'), output, 'utf8');
+  return {
+    grossIncome,
+    yearlyData: {
+      2025: monthlyRentals,
+    },
+  };
+}
 
-    console.log('✅ Data written to property-data.js');
-  })
-  .catch((error) => {
-    console.error('❌ Error:', error);
-  });
+// === Main Runner ===
+async function main() {
+  const data = await extractPropertyData(spreadsheetId);
+  const result = processRentalData(data);
+
+  const fileContent = `export const grossIncome = ${result.grossIncome};
+
+export const yearlyData = {
+  2025: ${JSON.stringify(result.yearlyData[2025], null, 2)}
+};
+`;
+
+  fs.writeFileSync("rentalData.js", fileContent);
+  console.log("✅ rentalData.js written successfully!");
+}
+
+main();

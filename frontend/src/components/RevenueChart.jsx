@@ -5,26 +5,12 @@ import * as am5 from "@amcharts/amcharts5";
 import * as am5xy from "@amcharts/amcharts5/xy";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
-const yearlyData = {
-  2024: [
-    { month: "Jan", revenue: 46000 },
-    { month: "Feb", revenue: 42000 },
-    { month: "Mar", revenue: 49000 },
-    { month: "Apr", revenue: 51000 },
-    { month: "May", revenue: 54000 },
-    { month: "Jun", revenue: 56000 },
-    { month: "Jul", revenue: 58000 },
-    { month: "Aug", revenue: 62000 },
-    { month: "Sep", revenue: 59000 },
-    { month: "Oct", revenue: 64000 },
-    { month: "Nov", revenue: 67000 },
-    { month: "Dec", revenue: 70000 },
-  ],
-};
+// Import data from the external file
+import { yearlyData, grossIncome } from '../extractData/rentalData.js';
 
 const RevenueChart = () => {
   const chartRef = useRef(null);
-  const [year, setYear] = useState("2024");
+  const [year, setYear] = useState("2025");
   const chartObj = useRef({});
 
   useLayoutEffect(() => {
@@ -104,6 +90,8 @@ const RevenueChart = () => {
     }
   }, [year]);
 
+  const totalRevenue = yearlyData[year].reduce((acc, curr) => acc + curr.revenue, 0);
+
   return (
     <section className="grow px-4 min-h-[390px] max-md:max-w-full">
       <article className="w-full bg-white rounded-xl shadow-[0px_5px_5px_rgba(82,63,105,0.05)] max-md:max-w-full">
@@ -127,9 +115,9 @@ const RevenueChart = () => {
         <div className="px-8 pt-2 w-full max-md:px-5 max-md:max-w-full">
           <div className="flex flex-wrap items-center justify-between w-full max-md:max-w-full">
             <h3 className="text-3xl font-semibold text-black whitespace-nowrap">
-              ${year === "2024" ? "678,345" : "612,900"}
+              ${totalRevenue.toLocaleString()}
             </h3>
-            <p className="text-sm text-zinc-500">last year ${year === "2024" ? "563,443" : "500,100"}</p>
+            <p className="text-sm text-zinc-500">last year ${grossIncome.toLocaleString()}</p>
           </div>
 
           {/* Chart */}

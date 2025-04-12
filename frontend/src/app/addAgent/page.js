@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import Layout from "../../components/Layout/Layout";
 import AddAgentForm from '../../components/FormElements/AddAgentForm';
+import AssignRoleForm from '../../components/FormElements/AssignRoleForm';
 
 const AddAgent = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -13,7 +14,7 @@ const AddAgent = () => {
         },
         {
             text: 'Assign Role',
-            component: <p className="text-black text-3xl font-semibold">Assign Role</p>
+            component: <AssignRoleForm/>
         }
     ];
     return (

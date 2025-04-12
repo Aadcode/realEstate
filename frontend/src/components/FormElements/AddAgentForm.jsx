@@ -1,34 +1,43 @@
 'use client'
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useRef, useState } from 'react'
 import MainThemeButton from '../Buttons/MainThemeButton'
+import { toast } from 'react-hot-toast'
 
 const AddAgentForm = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [selected, setSelected] = useState('Choose...');
     const dropdownRef = useRef(null);
-    const options = ['Agent' ,'Customer'];
-
-    // useEffect(() => {
-    //     const handleClickOutside = () => {
-    //         if (dropdownRef.current) {
-    //             setIsOpen(false);
-    //         }
-    //     };
-
-    //     handleClickOutside()
-    // }, [selected]);
+    const options = ['Agent', 'Customer'];
 
     const handleSelect = (option) => {
         setSelected(option);
         setIsOpen(false);
     };
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // You can validate fields or simulate API response here
+        if (selected === 'Choose...') {
+            toast.error("Please select a role.");
+            return;
+        }
+
+        try {
+            // Simulate async operation
+            await new Promise(res => setTimeout(res, 1000));
+            toast.success(`Successfully added new ${selected}`);
+        } catch (error) {
+            toast.error("Something went wrong.");
+        }
+    };
+
     return (
         <div>
-            <form className="flex flex-col gap-4" action="" method="">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className='flex gap-4 text-gray-700 font-semibold'>
                     <div className='flex-1 flex flex-col gap-1'>
-                        <label htmlFor="name" className=''>Name</label>
+                        <label htmlFor="name">Name</label>
                         <input type="text" name="name" id="name" className='border border-gray-300 outline-none rounded-lg p-2 w-full' placeholder='Name' />
                     </div>
                     <div className='flex-1 flex flex-col gap-1'>
@@ -38,7 +47,7 @@ const AddAgentForm = () => {
                 </div>
                 <div className='flex gap-4 text-gray-700 font-semibold'>
                     <div className='flex-1 flex flex-col gap-1'>
-                        <label htmlFor="email" className=''>Email</label>
+                        <label htmlFor="email">Email</label>
                         <input type="email" name="email" id="email" className='border border-gray-300 outline-none rounded-lg p-2 w-full' placeholder='Email' />
                     </div>
                     <div className='flex-1 flex flex-col gap-1'>
@@ -46,7 +55,6 @@ const AddAgentForm = () => {
                         <input type='tel' name="phone" id="phone" className='border border-gray-300 outline-none rounded-lg p-2 w-full' placeholder='Phone' />
                     </div>
                 </div>
-
                 <div className='flex gap-4 text-gray-700 font-semibold'>
                     <div className='flex w-full gap-4 text-gray-700 font-semibold'>
                         <div className='flex-1 flex flex-col gap-1'>
@@ -54,12 +62,11 @@ const AddAgentForm = () => {
                             <div className="relative w-full" ref={dropdownRef}>
                                 <div
                                     onClick={() => setIsOpen(!isOpen)}
-                                    className="border border-gray-300 rounded-lg p-2 w-full text-left bg-white"
+                                    className="border border-gray-300 rounded-lg p-2 w-full text-left bg-white cursor-pointer"
                                 >
-                                    {dropdownRef === null ? (
-                                        <span className="text-gray-400">{selected}</span>
-                                    ) : <span className="text-gray-700">{selected}</span>
-                                    }
+                                    <span className={selected === 'Choose...' ? "text-gray-400" : "text-gray-700"}>
+                                        {selected}
+                                    </span>
                                     <span className="float-right">&#9662;</span>
                                 </div>
                                 {isOpen && (

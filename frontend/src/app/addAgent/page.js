@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import Layout from "../../components/Layout/Layout";
 import AddAgentForm from '../../components/FormElements/AddAgentForm';
-import AssignRoleForm from '../../components/FormElements/AssignRoleForm';
+import UserTable from '../../components/FormElements/UserTable';
 
 const AddAgent = () => {
     const [selectedIndex, setSelectedIndex] = useState(0);
@@ -14,7 +14,7 @@ const AddAgent = () => {
         },
         {
             text: 'Assign Role',
-            component: <AssignRoleForm/>
+            component: <UserTable/>
         }
     ];
     return (

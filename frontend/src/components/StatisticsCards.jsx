@@ -89,8 +89,8 @@ const StatisticsCards = () => {
   const totalTarget = 6000; // Adjust based on your real monthly goal
 
   return (
-    <section className="grow min-h-[363px] w-full">
-      <div className="w-full">
+    <section className="grow min-h-[363px] w-full h-full flex flex-col items-stretch gap-4">
+      <div className="w-full flex-1 flex items-stretch">
         <article className="relative flex flex-col justify-center w-full bg-red-500 rounded-xl min-h-[146px] shadow-md overflow-hidden">
           <img
             src="https://cdn.builder.io/api/v1/image/assets/3911420c7fc948b98bd6faf80795a0cb/b9ae6a819f61e0cb0999470052ea03b938f82886"
@@ -126,7 +126,7 @@ const StatisticsCards = () => {
         </article>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-4 md:gap-6 mt-4 md:mt-6">
+      <div className="flex-1 grid max-xl:grid-cols-1 grid-cols-2 gap-4 md:gap-6">
         <PropertyTypeCard
           title="Properties for Sale"
           count={forSaleCount}
@@ -146,7 +146,7 @@ const StatisticsCards = () => {
 
 const PropertyTypeCard = ({ title, count, target, color }) => {
   return (
-    <div className="flex-1 bg-white rounded-xl shadow-md p-4 md:p-6 flex items-center justify-between">
+    <div className="flex-1 bg-white rounded-xl shadow-md p-4 md:p-6 flex flex-wrap items-center justify-start">
       <div>
         <h3 className="text-2xl md:text-3xl font-semibold text-black">
           {count.toLocaleString()}
@@ -158,7 +158,9 @@ const PropertyTypeCard = ({ title, count, target, color }) => {
           Target {target.toLocaleString()}/month
         </p>
       </div>
-      <RadialProgress value={count} target={target} color={color} />
+      <div className="mx-auto">
+        <RadialProgress value={count} target={target} color={color} />
+      </div>
     </div>
   );
 };

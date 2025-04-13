@@ -72,13 +72,9 @@ const CustomerReviews = () => {
   }, []);
 
   return (
-    <section className="px-4 py-6 w-full">
-      <article className="w-full bg-white rounded-xl shadow-md p-6">
-        <header className="flex justify-between items-center pb-4 border-b border-gray-200">
-          <h2 className="text-lg font-semibold text-black">Customer Reviews</h2>
-        </header>
-
-        <div className="py-4 space-y-4">
+    <section className="w-full h-full">
+      <article className="w-full flex flex-col gap-4 items-center justify-center h-full">
+        <div className="text-black">
           {loading ? (
             <p>Loading reviews...</p>
           ) : reviews.length > 0 ? (
@@ -97,7 +93,7 @@ const CustomerReviews = () => {
           )}
         </div>
 
-        <button className="w-full py-3 text-base font-semibold text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 transition">
+        <button className="w-fit px-5 py-3 text-base font-semibold text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 transition">
           See More Reviews
         </button>
       </article>

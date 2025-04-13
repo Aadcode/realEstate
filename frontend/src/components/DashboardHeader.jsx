@@ -18,19 +18,17 @@ const DashboardHeader = () => {
 
   return (
     <header className="flex flex-wrap items-start w-full max-md:max-w-full">
-      <div className="flex flex-col flex-1 shrink items-start basis-0 min-w-[244px] pr-[1323px] max-md:max-w-full">
-        <div className="max-w-full w-[244px]">
-          <h1 className="w-full text-3xl font-semibold text-black whitespace-nowrap">
-            Dashboard
-          </h1>
-          <p className="mt-2 w-full text-sm leading-6 text-zinc-500">
-            Welcome to Omah Property
-          </p>
-        </div>
+      <div className="flex flex-col flex-1 items-start">
+        <h1 className="w-full text-3xl font-semibold text-black whitespace-nowrap">
+          Dashboard
+        </h1>
+        <p className="w-full text-sm leading-6 text-zinc-500">
+          Welcome to Omah Property
+        </p>
       </div>
       <button
         onClick={handleRefresh}
-        className="px-5 pt-2.5 pb-3 text-white text-center whitespace-nowrap rounded-xl border border-solid bg-indigo-700 bg-opacity-10 border-indigo-700 border-opacity-10 max-md:px-5"
+        className="px-5 py-3 text-indigo-600 text-center whitespace-nowrap rounded-xl border border-solid bg-indigo-100 bg-opacity-10 border-indigo-400 border-opacity-10"
         disabled={refreshing}
       >
         {refreshing ? "Refreshing..." : "Refresh"}

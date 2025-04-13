@@ -42,7 +42,7 @@ const Header = () => {
     console.log("Logging out...");
     localStorage.removeItem("user");
     setIsDropdownOpen(false);
-    redirect("/login:")
+    redirect("/login")
   };
 
   // Effect to handle clicks outside the dropdown

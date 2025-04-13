@@ -9,7 +9,7 @@ export default function CustomerHeader() {
         <span className="text-sm text-gray-500">Customer List</span>
       </div>
 
-      <button className="px-5 py-2.5 text-indigo-700 rounded-xl border border-solid cursor-pointer bg-indigo-700 bg-opacity-10 border-indigo-700 border-opacity-10 max-sm:w-full">
+      <button className="px-5 py-2.5  rounded-xl border border-solid cursor-pointer bg-indigo-700 bg-opacity-10 border-indigo-700 border-opacity-10 max-sm:w-full">
         Refresh
       </button>
     </div>

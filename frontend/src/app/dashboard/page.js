@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { useRouter } from "next/navigation";
+
 import Layout from "../../components/Layout/Layout";
 import DashboardHeader from "../../components/DashboardHeader";
 import StatisticsCards from "../../components/StatisticsCards";
@@ -13,11 +13,9 @@ import SalesRentChart from "../../components/SalesRentChart";
 import UserDistributionChart from "../../components/PieChart";
 
 const Dashboard = () => {
-  const router = useRouter();
+ 
 
-  const handleViewAllReviews = () => {
-    router.push("/reviews");
-  };
+ 
 
   return (
     <Layout>
@@ -49,12 +47,7 @@ const Dashboard = () => {
             <div className="rounded-xl bg-white p-6 shadow-md flex flex-col gap-4">
               <div className="flex justify-between items-center ">
                 <h2 className="text-xl font-semibold text-black">Customer Reviews</h2>
-                <button
-                  onClick={handleViewAllReviews}
-                  className="text-blue-600 text-sm hover:text-blue-700 transition-colors"
-                >
-                  View All
-                </button>
+            
               </div>
               <CustomerReviews />
             </div>

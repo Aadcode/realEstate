@@ -1,14 +1,54 @@
 "use client";
 
-import React, { useRef, useLayoutEffect } from "react";
+import React, { useRef, useLayoutEffect, useState, useEffect } from "react";
 import * as am5 from "@amcharts/amcharts5";
 import * as am5percent from "@amcharts/amcharts5/percent";
 import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 
 const PieChart = () => {
   const chartRef = useRef(null);
+  const [userData, setUserData] = useState([]);
+
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await fetch("http://localhost:8000/api/v1/users");
+        const data = await response.json();
+        
+        if (data.success) {
+          // Count agents and customers
+          let agentCount = 0;
+          let customerCount = 0;
+          
+          data.data.forEach((user) => {
+            if (user.role === "AGENT") {
+              agentCount++;
+            } else if (user.role === "CUSTOMER") {
+              customerCount++;
+            }
+          });
+
+          // Calculate percentages
+          const total = agentCount + customerCount;
+          const agentPercentage = Math.round((agentCount / total) * 100);
+          const customerPercentage = 100 - agentPercentage;
+
+          setUserData([
+            { category: "Agent", value: agentPercentage },
+            { category: "Customers", value: customerPercentage }
+          ]);
+        }
+      } catch (error) {
+        console.error("Error fetching user data:", error);
+      }
+    };
+
+    fetchUsers();
+  }, []);
 
   useLayoutEffect(() => {
+    if (userData.length === 0) return;
+
     const root = am5.Root.new(chartRef.current);
     root.setThemes([am5themes_Animated.new(root)]);
 
@@ -27,11 +67,7 @@ const PieChart = () => {
       })
     );
 
-    series.data.setAll([
-      { category: "Agent", value: 38 },
-      { category: "Customers", value: 62 },
-    ]);
-
+    series.data.setAll(userData);
     series.appear(1000, 100);
 
     series.get("colors").set("colors", [
@@ -59,7 +95,7 @@ const PieChart = () => {
     return () => {
       root.dispose();
     };
-  }, []);
+  }, [userData]);
 
   return <div ref={chartRef} className="w-full h-[400px]" />;
 };

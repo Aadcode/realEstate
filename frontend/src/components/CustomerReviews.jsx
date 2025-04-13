@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 const StarRating = ({ rating }) => {
   return (
@@ -22,6 +23,7 @@ const StarRating = ({ rating }) => {
 };
 
 const ReviewCard = ({ comment, time, imageSrc, rating, customerName }) => {
+ 
   return (
     <article className="pb-4 w-full border-b border-gray-200 last:border-0">
       <div className="flex flex-wrap items-center gap-4">
@@ -54,6 +56,7 @@ const ReviewCard = ({ comment, time, imageSrc, rating, customerName }) => {
 const CustomerReviews = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
+  const router = useRouter()
 
   useEffect(() => {
     const fetchReviews = async () => {
@@ -93,7 +96,12 @@ const CustomerReviews = () => {
           )}
         </div>
 
-        <button className="w-fit px-5 py-3 text-base font-semibold text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 transition">
+        <button onClick={()=>
+          {
+             router.push("/reviews")
+            
+          }
+        } className="w-fit px-5 py-3 text-base font-semibold text-white bg-indigo-700 rounded-lg hover:bg-indigo-800 transition">
           See More Reviews
         </button>
       </article>

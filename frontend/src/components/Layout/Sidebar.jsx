@@ -19,7 +19,7 @@ const Sidebar = () => {
         items: [
           { path: "/dashboard", label: "Dashboard" },
           { path: "/reviews", label: "Reviews" },
-          { path: "/customers", label: "Customers" },
+          // { path: "/customers", label: "Customers" },
         ],
       },
       {

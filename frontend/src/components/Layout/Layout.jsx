@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       <Header />
       <div className="flex flex-1 max-md:flex-col">
         <Sidebar />
-        <div className="flex-1 px-6 py-6 overflow-auto max-md:px-4">
+        <div className="flex-1 px-6 py-6 overflow-auto max-md:px-4 flex flex-col gap-6">
           {children}
         </div>
       </div>

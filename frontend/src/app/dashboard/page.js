@@ -13,9 +13,6 @@ import SalesRentChart from "../../components/SalesRentChart";
 import UserDistributionChart from "../../components/PieChart";
 
 const Dashboard = () => {
- 
-
- 
 
   return (
     <Layout>
@@ -30,7 +27,7 @@ const Dashboard = () => {
             <StatisticsCards />
 
             {/* Revenue Chart */}
-            <div className="rounded-xl bg-white p-4 shadow-md">
+            <div className="">
               <RevenueChart />
             </div>
           </div>

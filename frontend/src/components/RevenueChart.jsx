@@ -93,7 +93,7 @@ const RevenueChart = () => {
   const totalRevenue = yearlyData[year].reduce((acc, curr) => acc + curr.revenue, 0);
 
   return (
-    <section className="grow max-md:max-w-full">
+    <section className="grow max-md:max-w-full rounded-xl bg-white p-4 shadow-md">
       <article className="w-full flex flex-col gap-4">
         <header className="flex flex-wrap justify-between items-center w-full rounded-xl max-md:max-w-full">
           <h2 className="text-lg font-semibold text-black">Total Revenue</h2>
@@ -121,7 +121,7 @@ const RevenueChart = () => {
 
           {/* Chart */}
           <div className="w-full min-h-[250px] py-2 flex items-center justify-center">
-            <div ref={chartRef} className="w-full h-[250px]" />
+            <div ref={chartRef} className="w-full h-[150px]" />
           </div>
         </div>
       </article>

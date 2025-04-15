@@ -1,7 +1,11 @@
 "use client";
+import { Judson } from "next/font/google";
 import React from "react";
 
 const AgentsHeader = () => {
+  const currentUser = JSON.parse(localStorage.getItem("user"))
+  const role = currentUser.role
+
   return (
     <div className="flex flex-col justify-center pb-8 w-full min-h-[115px]">
       <div className="flex flex-wrap items-center justify-between px-6 py-4 w-full bg-white rounded-lg shadow-sm">
@@ -23,9 +27,11 @@ const AgentsHeader = () => {
             </div>
           </div>
         </div>
-        <div className="px-5 py-2.5 text-base text-center text-indigo-700 rounded-xl border border-solid bg-indigo-700 bg-opacity-10 border-indigo-700 border-opacity-10 hover:bg-opacity-20 transition-colors cursor-pointer">
-          + Add Agent
-        </div>
+        {role === 'ADMIN' && (
+          <div className="px-5 py-2.5 text-base text-center text-white rounded-xl border border-solid bg-indigo-700 bg-opacity-10 border-indigo-700 border-opacity-10 hover:bg-opacity-20 transition-colors cursor-pointer">
+            + Add Agent
+          </div>
+        )}
       </div>
     </div>
   );

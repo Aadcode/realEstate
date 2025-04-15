@@ -14,6 +14,15 @@ import UserDistributionChart from "../../components/PieChart";
 
 const Dashboard = () => {
 
+  // const user = {
+  //   id: 29,
+  //   name: "Aadarsh",
+  //   email: "aadarsh@gmail.com",
+  //   role: "CUSTOMER",
+  //   avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&fit=crop&q=60",
+  // };
+  // localStorage.setItem("user", JSON.stringify(user));
+
   return (
     <Layout>
       <div className="max-w-[1744px] w-full px-4 sm:px-6 lg:px-8 mx-auto text-black">
@@ -44,7 +53,7 @@ const Dashboard = () => {
             <div className="rounded-xl bg-white p-6 shadow-md flex flex-col gap-4">
               <div className="flex justify-between items-center ">
                 <h2 className="text-xl font-semibold text-black">Customer Reviews</h2>
-            
+
               </div>
               <CustomerReviews />
             </div>

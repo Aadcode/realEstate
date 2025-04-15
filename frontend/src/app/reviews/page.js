@@ -4,7 +4,10 @@ import Layout from "../../components/Layout/Layout";
 import ReviewsList from "../../components/Reviews/ReviewsList";
 
 const ReviewsPage = () => {
-  const [activeStatus, setActiveStatus] = useState("All_Review");
+  const currentUser = JSON.parse(localStorage.getItem("user"))
+  const role = currentUser.role;
+  const visibleTabs = role === "CUSTOMER" ? ["Published"] : ["All Review","Published", "Deleted"];
+  const [activeStatus, setActiveStatus] = useState(visibleTabs[0]);
 
   const handleStatusChange = (status) => {
     setActiveStatus(status);
@@ -23,7 +26,7 @@ const ReviewsPage = () => {
           
           {/* Status Tabs */}
           <div className="flex gap-4">
-            {["All_Review", "Published", "Deleted"].map((status) => (
+            {visibleTabs.map((status) => (
               <button
                 key={status}
                 onClick={() => handleStatusChange(status)}

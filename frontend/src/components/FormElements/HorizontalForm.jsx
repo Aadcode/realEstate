@@ -3,11 +3,11 @@ import FormSection from "./FormSection";
 
 const FormField = ({ label, type = "text", placeholder, ...props }) => (
   <div className="mb-4 flex flex-col">
-    <label className="mb-1 text-sm font-medium text-gray-700">{label}</label>
+    <label className="mb-1 text-sm font-semibold text-indigo-900">{label}</label>
     <input
       type={type}
       placeholder={placeholder || label}
-      className="px-4 py-2 w-full rounded-md border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none"
+      className="px-4 py-2 w-full text-gray-500 rounded-md border border-gray-300 focus:ring focus:ring-indigo-700 outline-none"
       {...props}
     />
   </div>
@@ -16,14 +16,14 @@ const FormField = ({ label, type = "text", placeholder, ...props }) => (
 const HorizontalForm = () => {
   return (
     <FormSection title="Horizontal Form">
-      <form className="grid grid-cols-2 gap-6">
-        <div className="col-span-1">
+      <form className="grid grid-cols-2 gap-6 ">
+        <div className="col-span-1 text-black">
           <FormField label="Name" />
           <FormField label="Password" type="password" />
 
           {/* Select Dropdown - Fixed defaultValue */}
           <div className="mb-4 flex flex-col">
-            <label className="mb-1 text-sm font-medium text-gray-700">State</label>
+            <label className="mb-1 text-sm font-semibold text-indigo-900">State</label>
             <select
               defaultValue=""
               className="px-4 py-2 w-full rounded-md border border-gray-300 focus:ring-2 focus:ring-indigo-500 outline-none"
@@ -45,12 +45,12 @@ const HorizontalForm = () => {
           </div>
 
           {/* Submit Button */}
-          <button className="w-full px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-400 outline-none">
+          <button className="w-fit px-4 py-2 text-white bg-indigo-600 rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-400 outline-none">
             Sign in
           </button>
         </div>
 
-        <div className="col-span-1">
+        <div className="col-span-1 text-black">
           <FormField label="Email" type="email" />
           <FormField label="City" />
           <FormField label="Zip" />

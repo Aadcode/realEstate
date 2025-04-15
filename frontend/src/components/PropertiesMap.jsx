@@ -96,7 +96,7 @@ const PropertiesMap = () => {
   ];
 
   return (
-    <div className="bg-white rounded-xl shadow-[0px_5px_5px_rgba(82,63,105,0.05)]">
+    <div className="">
       <header className="flex justify-between items-center mb-6">
         <h2 className="text-lg font-semibold text-black">
           Properties Map Location

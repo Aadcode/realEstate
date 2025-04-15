@@ -41,8 +41,11 @@ const DEFAULT_AVATAR = "https://images.unsplash.com/photo-1633332755192-727a05c4
 const ReviewsList = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeTab, setActiveTab] = useState("All_Review");
-
+  const currentUser = JSON.parse(localStorage.getItem("user"))
+  const role = currentUser.role;
+  const visibleTabs = role === "CUSTOMER" ? ["Published"] : ["All Review","Published", "Deleted"];
+  const [activeTab, setActiveTab] = useState(visibleTabs[0]);
+  
   const fetchReviews = async () => {
     try {
       const response = await fetch("http://localhost:8000/api/v1/reviews");
@@ -129,7 +132,7 @@ const ReviewsList = () => {
     <div className="bg-white rounded-xl">
       {/* Navigation Tabs */}
       <div className="flex px-8 py-0 border-b border-solid border-b-zinc-300 max-sm:overflow-x-auto max-sm:px-4 max-sm:py-0">
-        {["All_Review", "Published", "Deleted"].map((tab) => (
+        {visibleTabs.map((tab) => (
           <div 
             key={tab} 
             onClick={() => handleTabClick(tab)}

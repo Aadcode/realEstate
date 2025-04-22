@@ -166,7 +166,7 @@ const PropertyForm = () => {
     formData.append('squareFeet', propertyData.area);
     
     // Add features as array instead of JSON string
-    formData.append('features[]', propertyData.selectedFeatures);
+    formData.append('features', [...propertyData.selectedFeatures]);
 
     // propertyData.selectedFeatures.forEach(featureName => {
     //   formData.append('features[]', featureName);

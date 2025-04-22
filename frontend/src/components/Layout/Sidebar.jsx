@@ -34,11 +34,24 @@ const Sidebar = () => {
         title: "Property",
         items: [
           { path: "/propertyDetails", label: "Property Details" },
-          { path: "/addProperty", label: "Add Property" },
+          ...(userRole === "ADMIN" || userRole === "AGENT"
+            ? [{ path: "/addProperty", label: "Add Property" }]
+            : []),
           { path: "/propertyList", label: "All Properties" },
         ],
       },
-      // Conditionally add Admin section based on userRole
+      ...(userRole === "ADMIN"?
+        [
+          {
+            section: "analytics",
+            icon: "https://cdn.builder.io/api/v1/image/assets/3911420c7fc948b98bd6faf80795a0cb/2bda6eb423efd913f3b419867929d97fe689db6b",
+            title: "Analytics",
+            items: [{ path: "/analytics", label: "Analytics" },
+              { path: "/dataEntry", label: "Data Entry" }
+            ],
+          }
+        ]:[]
+      ),
       ...(userRole === "ADMIN"
         ? [
             {

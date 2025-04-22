@@ -90,7 +90,7 @@ const RevenueChart = () => {
     }
   }, [year]);
 
-  const totalRevenue = yearlyData[year].reduce((acc, curr) => acc + curr.revenue, 0);
+  const totalRevenue = grossIncome
 
   return (
     <section className="grow max-md:max-w-full rounded-xl bg-white p-4 shadow-md">

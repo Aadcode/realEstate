@@ -1,17 +1,36 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Layout from "../../components/Layout/Layout";
 import ReviewsList from "../../components/Reviews/ReviewsList";
 
 const ReviewsPage = () => {
-  const currentUser = JSON.parse(localStorage.getItem("user"))
-  const role = currentUser.role;
-  const visibleTabs = role === "CUSTOMER" ? ["Published"] : ["All Review","Published", "Deleted"];
-  const [activeStatus, setActiveStatus] = useState(visibleTabs[0]);
+  const [role, setRole] = useState(null);
+  const [activeStatus, setActiveStatus] = useState("");
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const currentUser = JSON.parse(storedUser);
+      const userRole = currentUser.role;
+      setRole(userRole);
+
+      const tabs = userRole === "CUSTOMER"
+        ? ["Published"]
+        : ["All Review", "Published", "Deleted"];
+
+      setActiveStatus(tabs[0]);
+    }
+  }, []);
 
   const handleStatusChange = (status) => {
     setActiveStatus(status);
   };
+
+  if (!role || !activeStatus) return null; // Optionally show a loader here
+
+  const visibleTabs = role === "CUSTOMER"
+    ? ["Published"]
+    : ["All Review", "Published", "Deleted"];
 
   return (
     <Layout>
@@ -23,7 +42,7 @@ const ReviewsPage = () => {
             <span className="text-sm text-indigo-700">/</span>
             <span className="text-sm text-gray-500">Customer</span>
           </div>
-          
+
           {/* Status Tabs */}
           <div className="flex gap-4">
             {visibleTabs.map((status) => (

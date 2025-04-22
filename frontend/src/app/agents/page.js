@@ -9,29 +9,36 @@ const AgentsPage = () => {
   const [agents, setAgents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [agentCount, setAgentCount] = useState(0);
 
   useEffect(() => {
     const fetchAgents = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/v1/users");
-        if (!response.ok) {
+        const res = await fetch("http://localhost:8000/api/v1/users");
+
+        if (!res.ok) {
           throw new Error("Failed to fetch agents");
         }
-        const data = await response.json();
+
+        const data = await res.json();
+
         if (data.success && Array.isArray(data.data)) {
-          // Filter users to only show agents and include avatar
           const agentUsers = data.data
-            .filter(user => user.role === 'AGENT')
-            .map(agent => ({
+            .filter((user) => user.role === "AGENT")
+            .map((agent) => ({
               ...agent,
-              avatar: agent.avatar || "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60"
+              avatar:
+                agent.avatar ||
+                "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60",
             }));
+
           setAgents(agentUsers);
+          setAgentCount(agentUsers.length);
         } else {
           setAgents([]);
         }
-      } catch (error) {
-        setError(error.message);
+      } catch (err) {
+        setError(err.message || "Something went wrong");
       } finally {
         setLoading(false);
       }
@@ -65,9 +72,9 @@ const AgentsPage = () => {
           </div>
 
           {/* Pagination */}
-          {agents.length > 0 && (
+          {!loading && agents.length > 0 && (
             <div className="mt-8 flex justify-center">
-              <AgentsPagination />
+              <AgentsPagination agentCount={agentCount} />
             </div>
           )}
         </div>

@@ -17,22 +17,24 @@ export const addProperty = asyncHandler(async (req, reply) => {
         bathrooms,
         squareFeet,
         yearBuilt,
-        'features[]': featuresArray,  // Change how we extract features
+        'features': featuresArray, 
         userId 
     } = req.body;
 
     const images = req.uploadedFiles;
+   
 
     // Convert features to proper format
     const features = featuresArray ? 
         (Array.isArray(featuresArray) ? featuresArray : [featuresArray]) : 
         [];
-
+    
     if (!title || !description || !status || !address || !city || !state || !zipCode || !price || !userId) {
         throw new ApiError(400, "Required fields are missing");
     }
-
-    const newProperty = await prisma.property.create({
+    console.log(features)
+    const newFeature = features[0].split(",")
+        const newProperty = await prisma.property.create({
         data: {
             title,
             description,
@@ -46,7 +48,7 @@ export const addProperty = asyncHandler(async (req, reply) => {
             bathrooms: bathrooms ? parseInt(bathrooms) : null,
             squareFeet: squareFeet ? parseInt(squareFeet) : null,
             yearBuilt: yearBuilt ? parseInt(yearBuilt) : null,
-            features: features,  // Use the processed features array
+            features: newFeature,  // Use the processed features array
             imageUrls: images || [],
             agentId: parseInt(userId)
         }
@@ -98,5 +100,57 @@ export const getAllProperties = asyncHandler(async (req, reply) => {
 
     reply.code(200).send(
         new ApiResponse(200, properties, "Properties retrieved successfully")
+    );
+});
+
+export const getPropertyById = asyncHandler(async (req, reply) => {
+    const { id } = req.params;
+
+    if (!id) {
+        throw new ApiError(400, "Property ID is required");
+    }
+
+    const property = await prisma.property.findUnique({
+        where: {
+            id: parseInt(id)
+        },
+        include: {
+            agent: {
+                select: {
+                    id: true,
+                    name: true,
+                    email: true,
+                    phone: true,
+                    avatar: true
+                }
+            },
+            reviews: {
+                select: {
+                    id: true,
+                    rating: true,
+                    comment: true,
+                    status: true,
+                    createdAt: true,
+                    user: {
+                        select: {
+                            id: true,
+                            name: true,
+                            avatar: true
+                        }
+                    }
+                },
+                where: {
+                    status: "Published"
+                }
+            }
+        }
+    });
+
+    if (!property) {
+        throw new ApiError(404, "Property not found");
+    }
+
+    reply.code(200).send(
+        new ApiResponse(200, property, "Property retrieved successfully")
     );
 });

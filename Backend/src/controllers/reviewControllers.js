@@ -67,6 +67,11 @@ export const getAllReviews = async (request, reply) => {
                         email: true,
                         avatar: true
                     }
+                },
+                property:{
+                    select:{
+                        agent:true
+                    }
                 }
             },
             orderBy: {

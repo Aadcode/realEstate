@@ -1,7 +1,9 @@
+
 import React, { useState } from "react";
 
-const AgentsPagination = ({ totalPages = 5, currentPage = 2, onPageChange }) => {
+const AgentsPagination = ({ agentCount, currentPage = 1, onPageChange }) => {
   const [activePage, setActivePage] = useState(currentPage);
+  const totalPages = Math.ceil(agentCount/12)
 
   const handlePageChange = (page) => {
     if (page >= 1 && page <= totalPages) {

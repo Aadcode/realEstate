@@ -3,38 +3,7 @@ import React, { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import { toast } from "react-hot-toast";
 
-const fallbackReviews = [
-  {
-    id: "#C01234",
-    name: "Robert Patilson",
-    joinDate: "Join on 26/04/2020, 12:42 AM",
-    review:
-      "Friendly service Josh, Lunar and everyone at Just Property in Hastings deserved a big Thank You from us for moving us from Jakarta to Medan during the lockdown.",
-    rating: 4,
-    avatarUrl:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/27c0c7f7411252d6525fc088a3ff727da55b1a67",
-  },
-  {
-    id: "#C01234",
-    name: "Peter Parkur",
-    joinDate: "Join on 26/04/2020, 12:42 AM",
-    review:
-      "Dealing with Syamsudin and Bakri was a joy. I got in touch with Just Property after seeing a couple of properties that caught my eye. Both Syamsudin and Bakri strive to deliver a professional service and surpassed my expectations - they were not only help.",
-    rating: 4,
-    avatarUrl:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/ca96c9da452e853ef2c4554c01935321052d8b89",
-  },
-  {
-    id: "#C01234",
-    name: "Emilia Sigh",
-    joinDate: "Join on 26/04/2020, 12:42 AM",
-    review:
-      "Dealing with Syamsudin and Bakri was a joy. I got in touch with Just Property after seeing a couple of properties that caught my eye. Both Syamsudin and Bakri strive to deliver a professional service and surpassed my expectations - they were not only help.",
-    rating: 4,
-    avatarUrl:
-      "https://cdn.builder.io/api/v1/image/assets/TEMP/35eef414fdc4684988b1023c971fbe2b694ab52a",
-  },
-];
+
 
 const DEFAULT_AVATAR = "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=800&auto=format&fit=crop&q=60";
 
@@ -54,6 +23,7 @@ const ReviewsList = () => {
       if (data.data && data.data.length > 0) {
         const apiReviews = data.data.map((review) => ({
           reviewId: review.id,
+          agentId:review.property.agent.id,
           id: `#${review.userId}`,
           name: review.user?.name || "Anonymous",
           joinDate: new Date(review.createdAt).toLocaleString(),
@@ -62,7 +32,11 @@ const ReviewsList = () => {
           avatar: review.user?.avatar || DEFAULT_AVATAR,
           status: review.status || "Pending"
         }));
-        setReviews(apiReviews);
+       
+        setReviews(role === "AGENT"?apiReviews.filter((item)=>
+        (
+          item.agentId === currentUser.id
+        )):apiReviews);
       } else {
         setReviews([]);
       }
@@ -122,7 +96,7 @@ const ReviewsList = () => {
   };
 
   const filteredReviews = reviews.filter(review => {
-    if (activeTab === "All_Review") {
+    if (activeTab === "All Review") {
       return review.status === "All_Review" || review.status === "Pending";
     }
     return review.status === activeTab;

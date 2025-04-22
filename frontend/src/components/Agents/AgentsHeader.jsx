@@ -1,10 +1,17 @@
 "use client";
-import { Judson } from "next/font/google";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { redirect } from "next/navigation";
 
 const AgentsHeader = () => {
-  const currentUser = JSON.parse(localStorage.getItem("user"))
-  const role = currentUser.role
+  const [role, setRole] = useState(null);
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      const currentUser = JSON.parse(storedUser);
+      setRole(currentUser.role);
+    }
+  }, []);
 
   return (
     <div className="flex flex-col justify-center pb-8 w-full min-h-[115px]">
@@ -27,8 +34,12 @@ const AgentsHeader = () => {
             </div>
           </div>
         </div>
-        {role === 'ADMIN' && (
-          <div className="px-5 py-2.5 text-base text-center text-white rounded-xl border border-solid bg-indigo-700 bg-opacity-10 border-indigo-700 border-opacity-10 hover:bg-opacity-20 transition-colors cursor-pointer">
+
+        {role === "ADMIN" && (
+          <div
+            onClick={() => redirect("/addAgent")}
+            className="px-5 py-2.5 text-base text-center text-white rounded-xl border border-solid bg-indigo-700 bg-opacity-10 border-indigo-700 border-opacity-10 hover:bg-opacity-20 transition-colors cursor-pointer"
+          >
             + Add Agent
           </div>
         )}

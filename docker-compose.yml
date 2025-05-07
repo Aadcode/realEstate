@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres
+    container_name: REDB
+    ports:
+      - "5431:5432"
+    environment:
+      - POSTGRES_PASSWORD
+      - POSTGRES_DB
+      - POSTGRES_USER
+
+    env_file:
+      - "./Backend/.env"
+    volumes:
+      - REDATA:/var/lib/postgresql/data
+
+  refrontend:
+    container_name: refrontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    depends_on:
+      - rebackend
+
+  rebackend:
+    container_name: rebackend
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./Backend/.env
+    depends_on:
+      - db
+
+volumes:
+  REDATA:
